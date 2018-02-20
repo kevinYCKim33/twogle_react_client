@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import 'isomorphic-fetch';
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 
 // const maStyle = {
 //   width: '50px'
@@ -41,7 +43,7 @@ class App extends Component {
 
   handleOnSubmitNews = (e) => {
     e.preventDefault();
-    return fetch('http://localhost:3001/api/headlines/load_headlines/', {
+    fetch('http://localhost:3001/api/headlines/load_headlines/', {
       method: "post",
       headers: {
         'Accept': 'application/json',
@@ -72,17 +74,18 @@ class App extends Component {
     //   )
     // })
     const headlines = this.state.headlines.map((headline, index) => {
+      debugger;
       return (
         <div key={index} className="newscard">
           <img style={{width: "75px"}} src={headline.urlToImage} alt={headline.title} />
           <br />
-          <b>{headline.title}</b>
+          <b><a href={headline.url}>{headline.title}</a></b>
           <div><span style={{color: 'green'}}>({headline.source.name})</span> - {new Date(headline.publishedAt).toString()} </div>
           <div>{headline.description}</div>
         </div>
       )
     })
-
+// <Link style={{ marginRight: '12px' }} key={movie.id} to={`/movies/${movie.id}`}>{movie.title}</Link>
 
     return (
       <div className="App">
@@ -98,6 +101,10 @@ class App extends Component {
           </form>
 
           <h3>News results</h3>
+          <div>
+            <blockquote className="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The media mob, of course, is siding with LeBron James and diminishing Laura Ingraham.  Just another example of corruption.  Labeling Americans racist has become a vicious sport that the national press embraces.</p>&mdash; Bill O&#39;Reilly (@BillOReilly) <a href="https://twitter.com/BillOReilly/status/965662280498204673?ref_src=twsrc%5Etfw">February 19, 2018</a></blockquote>
+            <blockquote className="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The media mob, of course, is siding with LeBron James and diminishing Laura Ingraham.  Just another example of corruption.  Labeling Americans racist has become a vicious sport that the national press embraces.</p>&mdash; Bill O&#39;Reilly (@BillOReilly) <a href="https://twitter.com/BillOReilly/status/965662280498204673?ref_src=twsrc%5Etfw">February 19, 2018</a></blockquote>
+          </div>
           <div>
             {headlines}
           </div>
