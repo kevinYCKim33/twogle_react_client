@@ -53,7 +53,6 @@ class App extends Component {
     }).then(response => {
       return response.json()
     }).then(responseJSON => {
-      debugger;
       this.setState({
         headlines: responseJSON
       })
@@ -74,9 +73,12 @@ class App extends Component {
     // })
     const headlines = this.state.headlines.map((headline, index) => {
       return (
-        <div key={index}>
-          <li>{headline.title}</li>
-          <li>{headline.description}</li>
+        <div key={index} className="newscard">
+          <img style={{width: "75px"}} src={headline.urlToImage} alt={headline.title} />
+          <br />
+          <b>{headline.title}</b>
+          <div><span style={{color: 'green'}}>({headline.source.name})</span> - {new Date(headline.publishedAt).toString()} </div>
+          <div>{headline.description}</div>
         </div>
       )
     })
@@ -88,14 +90,18 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
 
-        <h3> Search GoogleNews </h3>
-        <form onSubmit={this.handleOnSubmitNews}>
-          <input onChange={this.handleOnChange} type="text" value={this.state.search} />
-          <input type="submit" value="search" />
-        </form>
+        <div className="App-body">
+          <h3> Search GoogleNews </h3>
+          <form onSubmit={this.handleOnSubmitNews}>
+            <input onChange={this.handleOnChange} type="text" value={this.state.search} />
+            <input type="submit" value="search" />
+          </form>
 
-        <h3>News results</h3>
-        <button type="button" class="btn btn-primary">Primary</button>
+          <h3>News results</h3>
+          <div>
+            {headlines}
+          </div>
+        </div>
       </div>
     );
   }
