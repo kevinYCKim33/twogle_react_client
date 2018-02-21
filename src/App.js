@@ -74,7 +74,6 @@ class App extends Component {
     //   )
     // })
     const headlines = this.state.headlines.map((headline, index) => {
-      debugger;
       return (
         <div key={index} className="newscard">
           <img style={{width: "75px"}} src={headline.urlToImage} alt={headline.title} />
@@ -103,10 +102,15 @@ class App extends Component {
           <h3>News results</h3>
           <div>
             <blockquote className="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The media mob, of course, is siding with LeBron James and diminishing Laura Ingraham.  Just another example of corruption.  Labeling Americans racist has become a vicious sport that the national press embraces.</p>&mdash; Bill O&#39;Reilly (@BillOReilly) <a href="https://twitter.com/BillOReilly/status/965662280498204673?ref_src=twsrc%5Etfw">February 19, 2018</a></blockquote>
-            <blockquote className="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The media mob, of course, is siding with LeBron James and diminishing Laura Ingraham.  Just another example of corruption.  Labeling Americans racist has become a vicious sport that the national press embraces.</p>&mdash; Bill O&#39;Reilly (@BillOReilly) <a href="https://twitter.com/BillOReilly/status/965662280498204673?ref_src=twsrc%5Etfw">February 19, 2018</a></blockquote>
+            <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Great times celebrating at our annual “The Game Is Everything” All-Star Dinner! <a href="https://twitter.com/BenSimmons25?ref_src=twsrc%5Etfw">@BenSimmons25</a> <a href="https://twitter.com/RealTristan13?ref_src=twsrc%5Etfw">@RealTristan13</a> <a href="https://twitter.com/JohnWall?ref_src=twsrc%5Etfw">@JohnWall</a> <a href="https://twitter.com/KingJames?ref_src=twsrc%5Etfw">@KingJames</a> <a href="https://t.co/zD5skwu3U0">pic.twitter.com/zD5skwu3U0</a></p>&mdash; Klutch Sports Group (@KlutchSports) <a href="https://twitter.com/KlutchSports/status/965303997979439104?ref_src=twsrc%5Etfw">February 18, 2018</a></blockquote>
+
           </div>
           <div>
             {headlines}
+          </div>
+          <div>
+
+
           </div>
         </div>
       </div>
