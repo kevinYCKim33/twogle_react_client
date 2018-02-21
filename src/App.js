@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
 import './App.css';
 import 'isomorphic-fetch';
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Tweets from './Tweets'
 
 class App extends Component {
+  // componentDidMount() {
+  //   var scriptz = <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  //   ReactDOM.render(scriptz, document.getElementById('script'));
+  // }
+
   constructor() {
     super();
     this.state = {
@@ -12,32 +20,14 @@ class App extends Component {
       headlines: []
     }
     this.handleOnChange = this.handleOnChange.bind(this);
-    // this.handleOnSubmit = this.handleOnSubmit.bind(this);
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
   }
 
-  // handleOnSubmit = (e) => {
-  //   e.preventDefault();
-  //   return fetch('http://localhost:3001/api/tweets/load_tweets/', {
-  //     method: "post",
-  //     headers: {
-  //       'Accept': 'application/json',
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify({
-  //       search: this.state.search
-  //     })
-  //   }).then(response => {
-  //     return response.json()
-  //   }).then(responseJSON => {
-  //     this.setState({
-  //       headlines: responseJSON
-  //     })
-  //   })
-  // }
-
   handleOnSubmit = (e) => {
     e.preventDefault();
+    this.setState ({
+      tweets: [],
+    })
     fetch('http://localhost:3001/api/headlines/load_headlines/', {
       method: "post",
       headers: {
@@ -67,6 +57,7 @@ class App extends Component {
     }).then(response => {
       return response.json()
     }).then(responseJSON => {
+      // debugger;
       this.setState({
         tweets: responseJSON
       })
@@ -84,7 +75,7 @@ class App extends Component {
 
     const tweets = this.state.tweets.map((tweet, index) => {
       return (
-        <li key={index}>{tweet.full_text}</li>
+        <blockquote className="twitter-tweet" data-lang={tweet.lang}><p lang={tweet.lang} dir="ltr">{tweet.full_text}</p>&mdash; {tweet.user.name} (@{tweet.user.screen_name}) <a href={"https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str + "?ref_src=twsrc%5Etfw"}>.</a></blockquote>
       )
     })
 
@@ -122,14 +113,24 @@ class App extends Component {
             </div>
             <div>
               <h3>Tweet results</h3>
-              {tweets}
+              {tweets.length > 0 &&
+                <Tweets tweets={tweets}/>
+              }
             </div>
+
           </div>
 
         </div>
+        // <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
     );
   }
 }
 
 export default App;
+
+// working
+// https://twitter.com/BillOReilly/status/965662280498204673?ref_src=twsrc%5Etfw
+//
+// not working
+// https://twitter.com/BillOReilly/status/965662280498204700?ref_src=twsrc%5Etfw
