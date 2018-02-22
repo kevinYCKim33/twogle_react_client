@@ -28,7 +28,7 @@
 }
 
 /* Searchbox */
-#flex-heading {
+.flex-heading {
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import './App.css';
 import 'isomorphic-fetch';
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import SearchBox from '../components/SearchBox'
 import HeadlineList from '../components/HeadlineList'
 import TweetList from '../components/TweetList'
 
@@ -75,12 +76,12 @@ class App extends Component {
         </header>
 
         <div className="App-body">
-          <div id="flex-heading">
-            <h3> Search GoogleNews and Twitter </h3>
-            <form onSubmit={this.handleOnSubmit}>
-              <input onChange={this.handleOnChange} type="text" value={this.state.search} />
-              <input type="submit" value="search" />
-            </form>
+          <div className="flex-heading">
+            <SearchBox
+              handleOnSubmit={this.handleOnSubmit}
+              handleOnChange={this.handleOnChange}
+              search={this.state.search}
+            />
           </div>
           <br />
           <div id="flex-body">
