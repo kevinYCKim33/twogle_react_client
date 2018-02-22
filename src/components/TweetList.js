@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Tweet from './Tweet.js';
+import Tweet from './Tweet';
 
 class TweetList extends React.Component {
   componentDidMount() {
@@ -14,6 +14,7 @@ class TweetList extends React.Component {
   render() {
     return (
       <div >
+        <h3>{this.props.tweets.length} tweets returned </h3>
         {this.props.tweets.map((tweet, index) => {
           return (
             <Tweet key={index} tweet={tweet}/>

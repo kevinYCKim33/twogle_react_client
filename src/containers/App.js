@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import './App.css';
 import 'isomorphic-fetch';
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import HeadlineList from '../components/HeadlineList'
 import TweetList from '../components/TweetList'
 
 class App extends Component {
@@ -39,7 +40,7 @@ class App extends Component {
       this.setState({
         headlines: responseJSON
       })
-    });
+    })
 
     fetch('http://localhost:3001/api/tweets/load_tweets/', {
       method: "post",
@@ -53,7 +54,6 @@ class App extends Component {
     }).then(response => {
       return response.json()
     }).then(responseJSON => {
-      // debugger;
       this.setState({
         tweets: responseJSON
       })
@@ -68,19 +68,6 @@ class App extends Component {
   }
 
   render() {
-
-    const headlines = this.state.headlines.map((headline, index) => {
-      return (
-        <div key={index} className="newscard">
-          <img style={{width: "75px"}} src={headline.urlToImage} alt={headline.title} />
-          <br />
-          <b><a href={headline.url}>{headline.title}</a></b>
-          <div><span style={{color: 'green'}}>({headline.source.name})</span> - {new Date(headline.publishedAt).toString()} </div>
-          <div>{headline.description}</div>
-        </div>
-      )
-    })
-
     return (
       <div className="App">
         <header className="App-header">
@@ -98,28 +85,20 @@ class App extends Component {
           <br />
           <div id="flex-body">
             <div>
-              <h3>News results</h3>
-              {headlines}
+              {this.state.headlines.length > 0 &&
+                <HeadlineList headlines={this.state.headlines}/>
+              }
             </div>
             <div>
               {this.state.tweets.length > 0 &&
                 <TweetList tweets={this.state.tweets}/>
               }
             </div>
-
           </div>
-
         </div>
-        // <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
     );
   }
 }
 
 export default App;
-
-// working
-// https://twitter.com/BillOReilly/status/965662280498204673?ref_src=twsrc%5Etfw
-//
-// not working
-// https://twitter.com/BillOReilly/status/965662280498204700?ref_src=twsrc%5Etfw
