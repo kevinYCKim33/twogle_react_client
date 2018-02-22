@@ -6,7 +6,7 @@ import 'isomorphic-fetch';
 import SearchBox from '../components/SearchBox'
 import HeadlineList from '../components/HeadlineList'
 import TweetList from '../components/TweetList'
-import { fetchTweets } from '../actions/twitterActions'
+import { fetchTweets, deleteTweets } from '../actions/twitterActions'
 import { connect } from 'react-redux'; // lets you connect to the redux store
 import { bindActionCreators } from 'redux'; // lets you link dispatch actions directly to props
 
@@ -44,6 +44,7 @@ class App extends Component {
       })
     })
 
+    this.props.deleteTweets();
     this.props.fetchTweets(this.state.search);
     // fetch('http://localhost:3001/api/tweets/load_tweets/', {
     //   method: "post",
@@ -107,7 +108,8 @@ class App extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    fetchTweets
+    fetchTweets,
+    deleteTweets
   }, dispatch)
 }
 

@@ -20,4 +20,6 @@ export const fetchTweets = (searchKeyWords) => {
   }
 }
 
-// export default fetchTweets; won't work with this syntax
+export const deleteTweets = () => {
+  return {type: 'DELETE_TWEETS'}
+}

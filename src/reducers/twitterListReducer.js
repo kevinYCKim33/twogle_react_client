@@ -7,6 +7,8 @@ const twitterListReducer = (state = {tweets: []}, action) => {
       // return Object.assign({}, state, { items: state.items.concat(state.items.length + 1) });
     case 'FETCH_TWEETS':
       return {...state, tweets: action.tweets }
+    case 'DELETE_TWEETS':
+      return { tweets: [] }
     default:
       // debugger;
       // console.log("Initial state.items length: %s", state.items.length);
