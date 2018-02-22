@@ -6,6 +6,7 @@ import 'isomorphic-fetch';
 import SearchBox from '../components/SearchBox'
 import HeadlineList from '../components/HeadlineList'
 import TweetList from '../components/TweetList'
+import { fetchHeadlines } from '../actions/headlineActions'
 import { fetchTweets, deleteTweets } from '../actions/twitterActions'
 import { connect } from 'react-redux'; // lets you connect to the redux store
 import { bindActionCreators } from 'redux'; // lets you link dispatch actions directly to props
@@ -24,9 +25,7 @@ class App extends Component {
 
   handleOnSubmit = (e) => {
     e.preventDefault();
-    // this.setState ({
-    //   tweets: [],
-    // })
+
     fetch('http://localhost:3001/api/headlines/load_headlines/', {
       method: "post",
       headers: {
@@ -46,23 +45,6 @@ class App extends Component {
 
     this.props.deleteTweets();
     this.props.fetchTweets(this.state.search);
-    // fetch('http://localhost:3001/api/tweets/load_tweets/', {
-    //   method: "post",
-    //   headers: {
-    //     'Accept': 'application/json',
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify({
-    //     search: this.state.search
-    //   })
-    // }).then(response => {
-    //   return response.json()
-    // }).then(tweets => {
-    //   this.setState({
-    //     tweets
-    //   })
-    // });
-
 
   }
 

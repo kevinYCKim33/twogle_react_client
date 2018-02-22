@@ -9,11 +9,12 @@ import { createStore, applyMiddleware, compose } from 'redux'; // gives you acce
 import { Provider } from 'react-redux'; // gives children access to the react store
 import thunk from 'redux-thunk'; // lets you write complicated dispatch functions
 import registerServiceWorker from './registerServiceWorker';
-import twitterListReducer from './reducers/twitterListReducer';
+import combineReducers from './reducers/index';
+// import twitterListReducer from './reducers/twitterListReducer';
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const store = createStore(
-  twitterListReducer,
+  combineReducers,
   compose(
   applyMiddleware(thunk),
   window.devToolsExtension ? window.devToolsExtension() : f => f

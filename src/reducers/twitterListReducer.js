@@ -1,4 +1,4 @@
-const twitterListReducer = (state = {tweets: []}, action) => {
+const twitterListReducer = (state = [], action) => {
   console.log(action);
   switch(action.type) {
 
@@ -6,12 +6,10 @@ const twitterListReducer = (state = {tweets: []}, action) => {
     //   return 'hey'
       // return Object.assign({}, state, { items: state.items.concat(state.items.length + 1) });
     case 'FETCH_TWEETS':
-      return {...state, tweets: action.tweets }
+      return action.tweets
     case 'DELETE_TWEETS':
-      return { tweets: [] }
+      return []
     default:
-      // debugger;
-      // console.log("Initial state.items length: %s", state.items.length);
       return state;
   }
 }
