@@ -6,6 +6,10 @@ import 'isomorphic-fetch';
 import SearchBox from '../components/SearchBox'
 import HeadlineList from '../components/HeadlineList'
 import TweetList from '../components/TweetList'
+import { fetchTweets } from '../actions/twitterActions'
+import { connect } from 'react-redux'; // lets you connect to the redux store
+import { bindActionCreators } from 'redux'; // lets you link dispatch actions directly to props
+
 
 class App extends Component {
 
@@ -13,7 +17,6 @@ class App extends Component {
     super();
     this.state = {
       search: '',
-      tweets: [],
       headlines: []
     }
 
@@ -21,9 +24,9 @@ class App extends Component {
 
   handleOnSubmit = (e) => {
     e.preventDefault();
-    this.setState ({
-      tweets: [],
-    })
+    // this.setState ({
+    //   tweets: [],
+    // })
     fetch('http://localhost:3001/api/headlines/load_headlines/', {
       method: "post",
       headers: {
@@ -41,22 +44,24 @@ class App extends Component {
       })
     })
 
-    fetch('http://localhost:3001/api/tweets/load_tweets/', {
-      method: "post",
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        search: this.state.search
-      })
-    }).then(response => {
-      return response.json()
-    }).then(tweets => {
-      this.setState({
-        tweets
-      })
-    });
+    this.props.fetchTweets(this.state.search);
+    // fetch('http://localhost:3001/api/tweets/load_tweets/', {
+    //   method: "post",
+    //   headers: {
+    //     'Accept': 'application/json',
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify({
+    //     search: this.state.search
+    //   })
+    // }).then(response => {
+    //   return response.json()
+    // }).then(tweets => {
+    //   this.setState({
+    //     tweets
+    //   })
+    // });
+
 
   }
 
@@ -89,8 +94,8 @@ class App extends Component {
               }
             </div>
             <div>
-              {this.state.tweets.length > 0 &&
-                <TweetList tweets={this.state.tweets}/>
+              {this.props.tweets.length > 0 &&
+                <TweetList tweets={this.props.tweets}/>
               }
             </div>
           </div>
@@ -100,4 +105,15 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    fetchTweets
+  }, dispatch)
+}
+
+const mapStateToProps = (state) => {
+  return { tweets: state.tweets };
+}
+
+
+export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App)

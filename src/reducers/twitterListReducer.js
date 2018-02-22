@@ -1,16 +1,15 @@
-const twitterListReducer = (state = {items: []}, action) => {
+const twitterListReducer = (state = {tweets: []}, action) => {
   console.log(action);
   switch(action.type) {
 
-    case 'INCREASE_COUNT':
-      debugger;
-      console.log("Current state.items length %s", state.items.length);
-      console.log("Updating state.items length to %s", state.items.length + 1);
-      return Object.assign({}, state, { items: state.items.concat(state.items.length + 1) });
-
+    // case 'LOADING_TWEETS':
+    //   return 'hey'
+      // return Object.assign({}, state, { items: state.items.concat(state.items.length + 1) });
+    case 'FETCH_TWEETS':
+      return {...state, tweets: action.tweets }
     default:
-      debugger;
-      console.log("Initial state.items length: %s", state.items.length);
+      // debugger;
+      // console.log("Initial state.items length: %s", state.items.length);
       return state;
   }
 }
