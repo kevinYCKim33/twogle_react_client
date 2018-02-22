@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Tweet from './Tweet.js';
 
-class Tweets extends React.Component {
+class TweetList extends React.Component {
   componentDidMount() {
     const script = document.createElement("script");
     script.src = "https://platform.twitter.com/widgets.js";
@@ -11,12 +12,17 @@ class Tweets extends React.Component {
   }
 
   render() {
+    const tweets = this.props.tweets.map((tweet, index) => {
+      return (
+        <Tweet key={index} tweet={tweet}/>
+      )
+    })
     return (
       <div >
-        {this.props.tweets}
+        {tweets}
       </div>
     );
   }
 }
 
-export default Tweets;
+export default TweetList;

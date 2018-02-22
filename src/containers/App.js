@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import './App.css';
 import 'isomorphic-fetch';
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Tweets from './Tweets'
+import TweetList from '../components/TweetList'
 
 class App extends Component {
   // componentDidMount() {
@@ -73,11 +73,11 @@ class App extends Component {
 
   render() {
 
-    const tweets = this.state.tweets.map((tweet, index) => {
-      return (
-        <blockquote className="twitter-tweet" data-lang={tweet.lang}><p lang={tweet.lang} dir="ltr">{tweet.full_text}</p>&mdash; {tweet.user.name} (@{tweet.user.screen_name}) <a href={"https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str + "?ref_src=twsrc%5Etfw"}>.</a></blockquote>
-      )
-    })
+    // const tweets = this.state.tweets.map((tweet, index) => {
+    //   return (
+    //     <blockquote className="twitter-tweet" data-lang={tweet.lang}><p lang={tweet.lang} dir="ltr">{tweet.full_text}</p>&mdash; {tweet.user.name} (@{tweet.user.screen_name}) <a href={"https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str + "?ref_src=twsrc%5Etfw"}>.</a></blockquote>
+    //   )
+    // })
 
     const headlines = this.state.headlines.map((headline, index) => {
       return (
@@ -112,9 +112,8 @@ class App extends Component {
               {headlines}
             </div>
             <div>
-              <h3>Tweet results</h3>
-              {tweets.length > 0 &&
-                <Tweets tweets={tweets}/>
+              {this.state.tweets.length > 0 &&
+                <TweetList tweets={this.state.tweets}/>
               }
             </div>
 
