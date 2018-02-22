@@ -37,9 +37,9 @@ class App extends Component {
       })
     }).then(response => {
       return response.json()
-    }).then(responseJSON => {
+    }).then(headlines => {
       this.setState({
-        headlines: responseJSON
+        headlines
       })
     })
 
@@ -54,9 +54,9 @@ class App extends Component {
       })
     }).then(response => {
       return response.json()
-    }).then(responseJSON => {
+    }).then(tweets => {
       this.setState({
-        tweets: responseJSON
+        tweets
       })
     });
 
