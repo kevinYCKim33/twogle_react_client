@@ -7,10 +7,6 @@ import 'isomorphic-fetch';
 import TweetList from '../components/TweetList'
 
 class App extends Component {
-  // componentDidMount() {
-  //   var scriptz = <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  //   ReactDOM.render(scriptz, document.getElementById('script'));
-  // }
 
   constructor() {
     super();
@@ -72,12 +68,6 @@ class App extends Component {
   }
 
   render() {
-
-    // const tweets = this.state.tweets.map((tweet, index) => {
-    //   return (
-    //     <blockquote className="twitter-tweet" data-lang={tweet.lang}><p lang={tweet.lang} dir="ltr">{tweet.full_text}</p>&mdash; {tweet.user.name} (@{tweet.user.screen_name}) <a href={"https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str + "?ref_src=twsrc%5Etfw"}>.</a></blockquote>
-    //   )
-    // })
 
     const headlines = this.state.headlines.map((headline, index) => {
       return (
