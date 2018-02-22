@@ -8,6 +8,7 @@ import HeadlineList from '../components/HeadlineList'
 import TweetList from '../components/TweetList'
 import { fetchHeadlines } from '../actions/headlineActions'
 import { fetchTweets, deleteTweets } from '../actions/twitterActions'
+
 import { connect } from 'react-redux'; // lets you connect to the redux store
 import { bindActionCreators } from 'redux'; // lets you link dispatch actions directly to props
 
@@ -18,34 +19,15 @@ class App extends Component {
     super();
     this.state = {
       search: '',
-      headlines: []
     }
 
   }
 
   handleOnSubmit = (e) => {
     e.preventDefault();
-
-    fetch('http://localhost:3001/api/headlines/load_headlines/', {
-      method: "post",
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        search: this.state.search
-      })
-    }).then(response => {
-      return response.json()
-    }).then(headlines => {
-      this.setState({
-        headlines
-      })
-    })
-
+    this.props.fetchHeadlines(this.state.search);
     this.props.deleteTweets();
     this.props.fetchTweets(this.state.search);
-
   }
 
   handleOnChange = (event) => {
@@ -72,8 +54,8 @@ class App extends Component {
           <br />
           <div id="flex-body">
             <div>
-              {this.state.headlines.length > 0 &&
-                <HeadlineList headlines={this.state.headlines}/>
+              {this.props.headlines.length > 0 &&
+                <HeadlineList headlines={this.props.headlines}/>
               }
             </div>
             <div>
@@ -91,12 +73,13 @@ class App extends Component {
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     fetchTweets,
-    deleteTweets
+    deleteTweets,
+    fetchHeadlines
   }, dispatch)
 }
 
 const mapStateToProps = (state) => {
-  return { tweets: state.tweets };
+  return { tweets: state.tweets, headlines: state.headlines };
 }
 
 

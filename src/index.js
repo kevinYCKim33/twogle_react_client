@@ -10,7 +10,6 @@ import { Provider } from 'react-redux'; // gives children access to the react st
 import thunk from 'redux-thunk'; // lets you write complicated dispatch functions
 import registerServiceWorker from './registerServiceWorker';
 import combineReducers from './reducers/index';
-// import twitterListReducer from './reducers/twitterListReducer';
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const store = createStore(
@@ -19,7 +18,7 @@ const store = createStore(
   applyMiddleware(thunk),
   window.devToolsExtension ? window.devToolsExtension() : f => f
   )
-); /* code change */
+);
 
 ReactDOM.render(
   <Provider store={store}>

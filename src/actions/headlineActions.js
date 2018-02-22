@@ -1,9 +1,8 @@
 import fetch from 'isomorphic-fetch';
 
-export const fetchTweets = (searchKeyWords) => {
+export const fetchHeadlines = (searchKeyWords) => {
   return function(dispatch) {
-    // dispatch({type: LOADING_TWEETS})
-    return fetch('http://localhost:3001/api/tweets/load_tweets/', {
+    return fetch('http://localhost:3001/api/headlines/load_headlines/', {
       method: "post",
       headers: {
         'Accept': 'application/json',
@@ -14,12 +13,8 @@ export const fetchTweets = (searchKeyWords) => {
       })
     }).then(response => {
       return response.json()
-    }).then(tweets => {
-      dispatch({type: 'FETCH_TWEETS', tweets})
-    });
+    }).then(headlines => {
+      dispatch({type: 'FETCH_HEADLINES', headlines})
+    })
   }
-}
-
-export const deleteTweets = () => {
-  return {type: 'DELETE_TWEETS'}
 }
