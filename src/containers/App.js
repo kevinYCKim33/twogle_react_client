@@ -17,8 +17,7 @@ class App extends Component {
       tweets: [],
       headlines: []
     }
-    this.handleOnChange = this.handleOnChange.bind(this);
-    this.handleOnSubmit = this.handleOnSubmit.bind(this);
+
   }
 
   handleOnSubmit = (e) => {
