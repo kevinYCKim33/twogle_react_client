@@ -16,15 +16,15 @@ import { bindActionCreators } from 'redux'; // lets you link dispatch actions di
 
 class App extends Component {
 
-  handleOnSubmit = (e) => {
-    e.preventDefault();
-    this.props.fetchHeadlines(this.props.search);
-    this.props.deleteTweets();
-    this.props.fetchTweets(this.props.search);
-  }
-
   handleOnChange = (event) => {
     this.props.updateSearch(event.target.value)
+  }
+
+  handleOnSubmit = (e) => {
+    e.preventDefault();
+    this.props.deleteTweets();
+    this.props.fetchHeadlines(this.props.search);
+    this.props.fetchTweets(this.props.search);
   }
 
   render() {
@@ -39,7 +39,7 @@ class App extends Component {
             <SearchBox
               handleOnSubmit={this.handleOnSubmit}
               handleOnChange={this.handleOnChange}
-              search={this.props.search}
+              search={this.props.search.keywords}
             />
           </div>
           <br />

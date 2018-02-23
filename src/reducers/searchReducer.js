@@ -1,4 +1,4 @@
-const searchReducer = (state = '', action) => {
+const searchReducer = (state = {keywords : ""}, action) => {
   console.log(action);
   switch(action.type) {
     case 'UPDATE_SEARCH':
