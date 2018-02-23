@@ -16,10 +16,10 @@ export const fetchHeadlines = (searchKeyWords) => {
     }).then(headlines => {
       if (headlines.length === 0) {
         // debugger;
-        dispatch({type: 'NO_HEADLINES_FOUND'})
+        dispatch({type: 'NO_HEADLINES_FOUND', submittedSearch: searchKeyWords })
       } else {
         // debugger;
-        dispatch({type: 'FETCH_HEADLINES', headlines})
+        dispatch({type: 'FETCH_HEADLINES', headlines: headlines, submittedSearch: searchKeyWords})
       }
     })
   }

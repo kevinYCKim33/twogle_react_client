@@ -1,11 +1,11 @@
-const headlineListReducer = (state = [], action) => {
+const headlineListReducer = (state = {results: [], submittedSearch: ''}, action) => {
   console.log(action);
   switch(action.type) {
     case 'FETCH_HEADLINES':
-      return action.headlines
+      return {results: action.headlines, submittedSearch: action.submittedSearch}
     case 'NO_HEADLINES_FOUND':
       // debugger;
-      return 'no headlines were found';
+      return {result: false, submittedSearch: action.submittedSearch};
     default:
       return state;
   }

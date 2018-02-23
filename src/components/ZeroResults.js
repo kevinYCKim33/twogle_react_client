@@ -1,9 +1,10 @@
 import React from 'react';
 
-const ZeroResults = ({searchKey}) => {
+const ZeroResults = ({searchedTerms}) => {
+  // debugger;
   return (
     <div>
-      zero results found {searchKey}
+      No headlines found for {searchedTerms}
     </div>
   )
 }

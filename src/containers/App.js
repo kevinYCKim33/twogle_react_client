@@ -47,8 +47,8 @@ class App extends Component {
           <br />
           <div id="flex-body">
             <div>
-              {this.props.headlines === 'no headlines were found' ? (
-                <ZeroResults searchKey={this.props.search}/>
+              {this.props.headlines.result === false ? (
+                <ZeroResults searchedTerms={this.props.headlines.submittedSearch}/>
               ) : (
                 <HeadlineList headlines={this.props.headlines}/>
               )}
