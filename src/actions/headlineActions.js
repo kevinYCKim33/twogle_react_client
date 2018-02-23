@@ -14,7 +14,13 @@ export const fetchHeadlines = (searchKeyWords) => {
     }).then(response => {
       return response.json()
     }).then(headlines => {
-      dispatch({type: 'FETCH_HEADLINES', headlines})
+      if (headlines.length === 0) {
+        // debugger;
+        dispatch({type: 'NO_HEADLINES_FOUND'})
+      } else {
+        // debugger;
+        dispatch({type: 'FETCH_HEADLINES', headlines})
+      }
     })
   }
 }

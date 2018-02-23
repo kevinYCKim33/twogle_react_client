@@ -6,6 +6,7 @@ import 'isomorphic-fetch';
 import SearchBox from '../components/SearchBox'
 import HeadlineList from '../components/HeadlineList'
 import TweetList from '../components/TweetList'
+import ZeroResults from '../components/ZeroResults'
 import { updateSearch } from '../actions/searchActions'
 import { fetchHeadlines } from '../actions/headlineActions'
 import { fetchTweets, deleteTweets } from '../actions/twitterActions'
@@ -28,6 +29,7 @@ class App extends Component {
   }
 
   render() {
+    // debugger;
     return (
       <div className="App">
         <header className="App-header">
@@ -45,12 +47,14 @@ class App extends Component {
           <br />
           <div id="flex-body">
             <div>
-              {this.props.headlines.length > 0 &&
+              {this.props.headlines === 'no headlines were found' ? (
+                <ZeroResults searchKey={this.props.search}/>
+              ) : (
                 <HeadlineList headlines={this.props.headlines}/>
-              }
+              )}
             </div>
             <div>
-              {this.props.headlines.length > 0 &&
+              {this.props.tweets.length > 0 &&
                 <TweetList tweets={this.props.tweets}/>
               }
             </div>
