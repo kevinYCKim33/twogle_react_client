@@ -6,6 +6,7 @@ import 'isomorphic-fetch';
 import SearchBox from '../components/SearchBox'
 import HeadlineList from '../components/HeadlineList'
 import TweetList from '../components/TweetList'
+import { updateSearch } from '../actions/searchActions'
 import { fetchHeadlines } from '../actions/headlineActions'
 import { fetchTweets, deleteTweets } from '../actions/twitterActions'
 
@@ -15,25 +16,15 @@ import { bindActionCreators } from 'redux'; // lets you link dispatch actions di
 
 class App extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      search: '',
-    }
-
-  }
-
   handleOnSubmit = (e) => {
     e.preventDefault();
-    this.props.fetchHeadlines(this.state.search);
+    this.props.fetchHeadlines(this.props.search);
     this.props.deleteTweets();
-    this.props.fetchTweets(this.state.search);
+    this.props.fetchTweets(this.props.search);
   }
 
   handleOnChange = (event) => {
-    this.setState({
-      search: event.target.value
-    })
+    this.props.updateSearch(event.target.value)
   }
 
   render() {
@@ -48,7 +39,7 @@ class App extends Component {
             <SearchBox
               handleOnSubmit={this.handleOnSubmit}
               handleOnChange={this.handleOnChange}
-              search={this.state.search}
+              search={this.props.search}
             />
           </div>
           <br />
@@ -74,12 +65,13 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     fetchTweets,
     deleteTweets,
-    fetchHeadlines
+    fetchHeadlines,
+    updateSearch
   }, dispatch)
 }
 
 const mapStateToProps = (state) => {
-  return { tweets: state.tweets, headlines: state.headlines };
+  return { tweets: state.tweets, headlines: state.headlines, search: state.search };
 }
 
 

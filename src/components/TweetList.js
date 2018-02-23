@@ -3,12 +3,20 @@ import ReactDOM from 'react-dom';
 import Tweet from './Tweet';
 
 class TweetList extends React.Component {
-  componentDidMount() {
+  addTwitterScript() {
     const script = document.createElement("script");
     script.src = "https://platform.twitter.com/widgets.js";
     script.async = true;
     script.charset="utf-8";
     document.body.appendChild(script);
+  }
+
+  componentDidMount() {
+    this.addTwitterScript()
+  }
+
+  componetDidUpdate() {
+    this.addTwitterScript()
   }
 
   render() {
@@ -20,6 +28,7 @@ class TweetList extends React.Component {
             <Tweet key={index} tweet={tweet}/>
           )
         })}
+
       </div>
     );
   }
