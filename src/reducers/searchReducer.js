@@ -1,8 +1,8 @@
-const searchReducer = (state = {keywords : ""}, action) => {
+const searchReducer = (state = "", action) => {
   console.log(action);
   switch(action.type) {
     case 'UPDATE_SEARCH':
-      return action.searchKeyWords;
+      return action.searchKeyWords
     default:
       return state;
   }

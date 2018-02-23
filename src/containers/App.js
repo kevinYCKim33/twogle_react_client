@@ -22,8 +22,8 @@ class App extends Component {
 
   handleOnSubmit = (e) => {
     e.preventDefault();
-    this.props.deleteTweets();
     this.props.fetchHeadlines(this.props.search);
+    this.props.deleteTweets();
     this.props.fetchTweets(this.props.search);
   }
 
@@ -50,7 +50,7 @@ class App extends Component {
               }
             </div>
             <div>
-              {this.props.tweets.length > 0 &&
+              {this.props.headlines.length > 0 &&
                 <TweetList tweets={this.props.tweets}/>
               }
             </div>
@@ -66,7 +66,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchTweets,
     deleteTweets,
     fetchHeadlines,
-    updateSearch
+    updateSearch,
   }, dispatch)
 }
 
