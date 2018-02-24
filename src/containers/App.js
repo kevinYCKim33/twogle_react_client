@@ -47,14 +47,17 @@ class App extends Component {
           <br />
           <div id="flex-body">
             <div>
-              {this.props.headlines.result === false ? (
+              {this.props.headlines.results === false ? (
                 <ZeroResults searchedTerms={this.props.headlines.submittedSearch}/>
               ) : (
                 <HeadlineList headlines={this.props.headlines}/>
               )}
             </div>
             <div>
-              {this.props.tweets.length > 0 &&
+              {this.props.tweets.results === false &&
+                <ZeroResults searchedTerms={this.props.tweets.submittedSearch}/>
+              }
+              {this.props.tweets.results.length > 0 &&
                 <TweetList tweets={this.props.tweets}/>
               }
             </div>

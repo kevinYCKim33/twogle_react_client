@@ -3,9 +3,9 @@ import React from 'react';
 const ZeroResults = ({searchedTerms}) => {
   // debugger;
   return (
-    <div>
-      No headlines found for {searchedTerms}
-    </div>
+    <h3>
+      No headlines found for <b>{searchedTerms}</b>
+    </h3>
   )
 }
 

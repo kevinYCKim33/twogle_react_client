@@ -15,20 +15,26 @@ class TweetList extends React.Component {
     this.addTwitterScript()
   }
 
-  componetDidUpdate() {
-    this.addTwitterScript()
-  }
+  // componetDidUpdate() {
+  //   this.addTwitterScript()
+  // }
 
   render() {
+    let tweets;
+    if (this.props.tweets.results.length > 0) {
+      tweets = this.props.tweets.results.map((tweet, index) => {
+        return (
+          <Tweet key={index} tweet={tweet}/>
+        )
+      })
+    }
+    // debugger;
     return (
       <div >
-        <h3>{this.props.tweets.length} tweets returned </h3>
-        {this.props.tweets.map((tweet, index) => {
-          return (
-            <Tweet key={index} tweet={tweet}/>
-          )
-        })}
-
+        {this.props.tweets.submittedSearch !== "" &&
+          <h3>{this.props.tweets.results.length} tweets returned </h3>
+        }
+        {tweets}
       </div>
     );
   }

@@ -15,7 +15,11 @@ export const fetchTweets = (searchKeyWords) => {
     }).then(response => {
       return response.json()
     }).then(tweets => {
-      dispatch({type: 'FETCH_TWEETS', tweets})
+      if (tweets.length === 0) {
+        dispatch({type: 'NO_TWEETS_FOUND', submittedSearch: searchKeyWords })
+      } else {
+        dispatch({type: 'FETCH_TWEETS', tweets: tweets, submittedSearch: searchKeyWords})
+      }
     });
   }
 }

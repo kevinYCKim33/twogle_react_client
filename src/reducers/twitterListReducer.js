@@ -1,14 +1,14 @@
-const twitterListReducer = (state = [], action) => {
+const twitterListReducer = (state = {results: [], submittedSearch: ''}, action) => {
   console.log(action);
   switch(action.type) {
 
-    // case 'LOADING_TWEETS':
-    //   return 'hey'
-      // return Object.assign({}, state, { items: state.items.concat(state.items.length + 1) });
     case 'FETCH_TWEETS':
-      return action.tweets
+      return {results: action.tweets, submittedSearch: action.submittedSearch}
+    case 'NO_TWEETS_FOUND':
+      return {results: false, submittedSearch: action.submittedSearch}
     case 'DELETE_TWEETS':
-      return []
+      debugger;
+      return {...state, results: [], submittedSearch: ''}
     default:
       return state;
   }
