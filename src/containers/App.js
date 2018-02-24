@@ -7,7 +7,7 @@ import SearchBox from '../components/SearchBox'
 import HeadlineList from '../components/HeadlineList'
 import TweetList from '../components/TweetList'
 import ZeroResults from '../components/ZeroResults'
-import { updateSearch } from '../actions/searchActions'
+import { updateSearch, storeSearch } from '../actions/searchActions'
 import { fetchHeadlines } from '../actions/headlineActions'
 import { fetchTweets, deleteTweets } from '../actions/twitterActions'
 
@@ -23,9 +23,10 @@ class App extends Component {
 
   handleOnSubmit = (e) => {
     e.preventDefault();
-    this.props.fetchHeadlines(this.props.search);
+    this.props.storeSearch(this.props.search.keywords);
+    this.props.fetchHeadlines(this.props.search.keywords);
     this.props.deleteTweets();
-    this.props.fetchTweets(this.props.search);
+    this.props.fetchTweets(this.props.search.keywords);
   }
 
   render() {
@@ -81,6 +82,7 @@ const mapDispatchToProps = (dispatch) => {
     deleteTweets,
     fetchHeadlines,
     updateSearch,
+    storeSearch
   }, dispatch)
 }
 
