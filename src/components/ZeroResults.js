@@ -1,10 +1,9 @@
 import React from 'react';
 
-const ZeroResults = ({searchedTerms}) => {
-  // debugger;
+const ZeroResults = ({searchedTerms, media}) => {
   return (
     <h3>
-      No headlines found for <b>{searchedTerms}</b>
+      No {media} results found for <b>{searchedTerms}</b>
     </h3>
   )
 }
