@@ -7,7 +7,6 @@ const twitterListReducer = (state = {results: [], submittedSearch: ''}, action) 
     case 'NO_TWEETS_FOUND':
       return {results: false, submittedSearch: action.submittedSearch}
     case 'DELETE_TWEETS':
-      debugger;
       return {...state, results: [], submittedSearch: ''}
     default:
       return state;
