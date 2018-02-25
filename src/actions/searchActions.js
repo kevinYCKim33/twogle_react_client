@@ -33,3 +33,12 @@ export const retrieveSearches = () => {
       })
   }
 }
+
+export const clearHistory = () => {
+  return function(dispatch) {
+    return fetch('http://localhost:3001/api/searches/clear')
+      .then(() => {
+        dispatch({type: "CLEAR_HISTORY"})
+      })
+  }
+}

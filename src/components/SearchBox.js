@@ -14,7 +14,7 @@ const SearchBox = (props) => {
           type="submit"
           value="Twogle"
         />
-        <button>
+        <button onClick={props.handleOnClick}>
           Clear History
         </button>
       </form>

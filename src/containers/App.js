@@ -17,11 +17,7 @@ import { bindActionCreators } from 'redux'; // lets you link dispatch actions di
 class App extends Component {
 
   render() {
-    const searchHistory = this.props.search.prevSearches.map(search => {
-      return (
-        <li> {search.keywords} </li>
-      )
-    })
+
     return (
       <div className="App">
         <header className="App-header">
@@ -61,11 +57,7 @@ class App extends Component {
                 <TweetList tweets={this.props.tweets}/>
               }
             </div>
-            <div>
-              <ul>
-                {searchHistory}
-              </ul>
-            </div>
+
           </div>
         </div>
       </div>

@@ -7,6 +7,8 @@ const searchReducer = (state = {keywords: "", prevSearches: []}, action) => {
       return {...state, prevSearches: [...state.prevSearches, action.search]}
     case 'RETRIEVE_SEARCHES':
       return {...state, prevSearches: action.prevSearches}
+    case 'CLEAR_HISTORY':
+      return {...state, prevSearches: []}
     default:
       return state;
   }

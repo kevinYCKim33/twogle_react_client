@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
-import { updateSearch, storeSearch, retrieveSearches } from '../actions/searchActions'
+import { updateSearch, storeSearch, retrieveSearches, clearHistory } from '../actions/searchActions'
 import { connect } from 'react-redux'; // lets you connect to the redux store
 import { bindActionCreators } from 'redux'; // lets you link dispatch actions directly to props
 import SearchBox from '../components/SearchBox';
+
 class SearchBoxContainer extends Component {
   componentDidMount() {
     this.props.retrieveSearches();
   }
 
   handleOnChange = (event) => {
-    this.props.updateSearch(event.target.value)
+    this.props.updateSearch(event.target.value);
+  }
+
+  handleClearHistory = () => {
+    this.props.clearHistory();
   }
 
   handleOnSubmit = (e) => {
@@ -21,12 +26,23 @@ class SearchBoxContainer extends Component {
   }
 
   render() {
+    const searchHistory = this.props.search.prevSearches.map(search => {
+      return (
+        <li> {search.keywords} </li>
+      )
+    })
     return(
+      <div>
       <SearchBox
         handleOnSubmit={this.handleOnSubmit}
         handleOnChange={this.handleOnChange}
         inputValue={this.props.search.keywords}
+        handleOnClick={this.handleClearHistory}
       />
+      <ul>
+        {searchHistory}
+      </ul>
+      </div>
     )
   }
 }
@@ -35,7 +51,8 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     updateSearch,
     storeSearch,
-    retrieveSearches
+    retrieveSearches,
+    clearHistory
   }, dispatch)
 }
 
