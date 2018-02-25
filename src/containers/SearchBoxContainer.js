@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { updateSearch, storeSearch, retrieveSearches } from '../actions/searchActions'
 import { connect } from 'react-redux'; // lets you connect to the redux store
 import { bindActionCreators } from 'redux'; // lets you link dispatch actions directly to props
-
+import SearchBox from '../components/SearchBox';
 class SearchBoxContainer extends Component {
   componentDidMount() {
     this.props.retrieveSearches();
@@ -22,20 +22,11 @@ class SearchBoxContainer extends Component {
 
   render() {
     return(
-      <div className="flex-heading">
-        <h3> Search Headlines and Twitter </h3>
-        <form onSubmit={this.handleOnSubmit}>
-          <input
-            onChange={this.handleOnChange}
-            type="text"
-            value={this.props.search.keywords}
-          />
-          <input
-            type="submit"
-            value="Twogle"
-          />
-        </form>
-      </div>
+      <SearchBox
+        onSubmit={this.handleOnSubmit}
+        onChange={this.handleOnChange}
+        value={this.props.search.keywords}
+      />
     )
   }
 }
