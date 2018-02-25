@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import 'isomorphic-fetch';
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import SearchBox from './SearchBox'
+import SearchBoxContainer from './SearchBoxContainer'
 import HeadlineList from '../components/HeadlineList'
 import TweetList from '../components/TweetList'
 import ZeroResults from '../components/ZeroResults'
@@ -26,14 +26,12 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Welcome to React</h1>
-          <ul>
-            {searchHistory}
-          </ul>
+
         </header>
 
         <div className="App-body">
           <div className="flex-heading">
-            <SearchBox
+            <SearchBoxContainer
               fetchHeadlines={this.props.fetchHeadlines}
               deleteTweets={this.props.deleteTweets}
               fetchTweets={this.props.fetchTweets}
@@ -62,6 +60,11 @@ class App extends Component {
               {this.props.tweets.results.length > 0 &&
                 <TweetList tweets={this.props.tweets}/>
               }
+            </div>
+            <div>
+              <ul>
+                {searchHistory}
+              </ul>
             </div>
           </div>
         </div>

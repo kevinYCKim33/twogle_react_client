@@ -3,7 +3,7 @@ import { updateSearch, storeSearch, retrieveSearches } from '../actions/searchAc
 import { connect } from 'react-redux'; // lets you connect to the redux store
 import { bindActionCreators } from 'redux'; // lets you link dispatch actions directly to props
 
-class SearchBox extends Component {
+class SearchBoxContainer extends Component {
   componentDidMount() {
     this.props.retrieveSearches();
   }
@@ -52,4 +52,4 @@ const mapStateToProps = (state) => {
   return { search: state.search };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBox)
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBoxContainer)
