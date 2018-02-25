@@ -3,11 +3,10 @@ import React, { Component } from 'react';
 import './App.css';
 import 'isomorphic-fetch';
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import SearchBox from '../components/SearchBox'
+import SearchBox from './SearchBox'
 import HeadlineList from '../components/HeadlineList'
 import TweetList from '../components/TweetList'
 import ZeroResults from '../components/ZeroResults'
-import { updateSearch, storeSearch, retrieveSearches } from '../actions/searchActions'
 import { fetchHeadlines } from '../actions/headlineActions'
 import { fetchTweets, deleteTweets } from '../actions/twitterActions'
 
@@ -17,25 +16,7 @@ import { bindActionCreators } from 'redux'; // lets you link dispatch actions di
 
 class App extends Component {
 
-  componentDidMount() {
-    this.props.retrieveSearches();
-  }
-
-
-  handleOnChange = (event) => {
-    this.props.updateSearch(event.target.value)
-  }
-
-  handleOnSubmit = (e) => {
-    e.preventDefault();
-    this.props.storeSearch(this.props.search.keywords);
-    this.props.fetchHeadlines(this.props.search.keywords);
-    this.props.deleteTweets();
-    this.props.fetchTweets(this.props.search.keywords);
-  }
-
   render() {
-    // debugger;
     return (
       <div className="App">
         <header className="App-header">
@@ -44,11 +25,7 @@ class App extends Component {
 
         <div className="App-body">
           <div className="flex-heading">
-            <SearchBox
-              handleOnSubmit={this.handleOnSubmit}
-              handleOnChange={this.handleOnChange}
-              search={this.props.search.keywords}
-            />
+            <SearchBox/>
           </div>
           <br />
           <div id="flex-body">
@@ -85,10 +62,7 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     fetchTweets,
     deleteTweets,
-    fetchHeadlines,
-    updateSearch,
-    storeSearch,
-    retrieveSearches
+    fetchHeadlines
   }, dispatch)
 }
 
