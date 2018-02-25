@@ -18,31 +18,20 @@ export const storeSearch = (searchKeyWords) => {
     }).then(response => {
       return response.json()
     }).then(search => {
-      dispatch({type: 'STORE_SEARCH', searchKeyWords: searchKeyWords})
+      debugger;
+      dispatch({type: 'STORE_SEARCH', search: search})
     })
   }
-  // return {type: 'STORE_SEARCH', searchKeyWords}
 }
 
-// export const storeSearch = (searchKeyWords) => {
-//   debugger;
-//   return function(dispatch) {
-//     debugger;
-//     // dispatch({type: LOADING_TWEETS})
-//     return fetch('http://localhost:3001/api/searches', {
-//       method: "post",
-//       headers: {
-//         'Accept': 'application/json',
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify({
-//         search: searchKeyWords
-//       })
-//     })
-//       .then(response => response.json())
-//       .then(search => {
-//         debugger;
-//         dispatch({type: 'STORE_SEARCH', searchKeyWords: search.keywords })
-//       })
-//   }
-// }
+export const retrieveSearches = () => {
+  return function(dispatch) {
+    return fetch('http://localhost:3001/api/searches')
+      .then(response => {
+        return response.json()
+      }).then(searches => {
+        debugger;
+        dispatch({type: 'RETRIEVE_SEARCHES', prevSearches: searches})
+      })
+  }
+}

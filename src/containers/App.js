@@ -7,7 +7,7 @@ import SearchBox from '../components/SearchBox'
 import HeadlineList from '../components/HeadlineList'
 import TweetList from '../components/TweetList'
 import ZeroResults from '../components/ZeroResults'
-import { updateSearch, storeSearch } from '../actions/searchActions'
+import { updateSearch, storeSearch, retrieveSearches } from '../actions/searchActions'
 import { fetchHeadlines } from '../actions/headlineActions'
 import { fetchTweets, deleteTweets } from '../actions/twitterActions'
 
@@ -16,6 +16,11 @@ import { bindActionCreators } from 'redux'; // lets you link dispatch actions di
 
 
 class App extends Component {
+
+  componentDidMount() {
+    this.props.retrieveSearches();
+  }
+
 
   handleOnChange = (event) => {
     this.props.updateSearch(event.target.value)
@@ -82,7 +87,8 @@ const mapDispatchToProps = (dispatch) => {
     deleteTweets,
     fetchHeadlines,
     updateSearch,
-    storeSearch
+    storeSearch,
+    retrieveSearches
   }, dispatch)
 }
 
