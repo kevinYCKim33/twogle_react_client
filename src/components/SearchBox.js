@@ -1,27 +1,25 @@
 import React from 'react';
-import { connect } from 'react-redux'; // lets you connect to the redux store
 
 const SearchBox = (props) => {
   return (
     <div className="flex-heading">
       <h3> Search Headlines and Twitter </h3>
-      <form onSubmit={props.onSubmit}>
+      <form onSubmit={props.handleOnSubmit}>
         <input
-          onChange={props.onChange}
+          onChange={props.handleOnChange}
           type="text"
-          value={props.search.keywords}
+          value={props.inputValue}
         />
         <input
           type="submit"
           value="Twogle"
         />
+        <button>
+          Clear History
+        </button>
       </form>
     </div>
   )
 }
 
-const mapStateToProps = (state) => {
-  return { search: state.search };
-}
-
-export default connect(mapStateToProps)(SearchBox)
+export default SearchBox

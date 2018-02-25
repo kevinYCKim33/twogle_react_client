@@ -23,9 +23,9 @@ class SearchBoxContainer extends Component {
   render() {
     return(
       <SearchBox
-        onSubmit={this.handleOnSubmit}
-        onChange={this.handleOnChange}
-        value={this.props.search.keywords}
+        handleOnSubmit={this.handleOnSubmit}
+        handleOnChange={this.handleOnChange}
+        inputValue={this.props.search.keywords}
       />
     )
   }
