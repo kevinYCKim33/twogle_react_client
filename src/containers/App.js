@@ -17,10 +17,18 @@ import { bindActionCreators } from 'redux'; // lets you link dispatch actions di
 class App extends Component {
 
   render() {
+    const searchHistory = this.props.search.prevSearches.map(search => {
+      return (
+        <li> {search.keywords} </li>
+      )
+    })
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Welcome to React</h1>
+          <ul>
+            {searchHistory}
+          </ul>
         </header>
 
         <div className="App-body">
@@ -71,8 +79,7 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const mapStateToProps = (state) => {
-  return { tweets: state.tweets, headlines: state.headlines };
+  return { tweets: state.tweets, headlines: state.headlines, search: state.search };
 }
-
 
 export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App)
