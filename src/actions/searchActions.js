@@ -15,6 +15,10 @@ export const storeSearch = (searchKeyWords) => {
       body: JSON.stringify({
         search: searchKeyWords
       })
+    }).then(response => {
+      return response.json()
+    }).then(search => {
+      dispatch({type: 'STORE_SEARCH', searchKeyWords: searchKeyWords})
     })
   }
   // return {type: 'STORE_SEARCH', searchKeyWords}
