@@ -25,7 +25,11 @@ class App extends Component {
 
         <div className="App-body">
           <div className="flex-heading">
-            <SearchBox/>
+            <SearchBox
+              fetchHeadlines={this.props.fetchHeadlines}
+              deleteTweets={this.props.deleteTweets}
+              fetchTweets={this.props.fetchTweets}
+            />
           </div>
           <br />
           <div id="flex-body">
@@ -67,7 +71,7 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const mapStateToProps = (state) => {
-  return { tweets: state.tweets, headlines: state.headlines, search: state.search };
+  return { tweets: state.tweets, headlines: state.headlines };
 }
 
 

@@ -18,7 +18,6 @@ export const storeSearch = (searchKeyWords) => {
     }).then(response => {
       return response.json()
     }).then(search => {
-      debugger;
       dispatch({type: 'STORE_SEARCH', search: search})
     })
   }
@@ -30,7 +29,6 @@ export const retrieveSearches = () => {
       .then(response => {
         return response.json()
       }).then(searches => {
-        debugger;
         dispatch({type: 'RETRIEVE_SEARCHES', prevSearches: searches})
       })
   }

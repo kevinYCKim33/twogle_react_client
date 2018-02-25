@@ -28,7 +28,7 @@ class SearchBox extends Component {
           <input
             onChange={this.handleOnChange}
             type="text"
-            value={this.props.search}
+            value={this.props.search.keywords}
           />
           <input
             type="submit"
@@ -39,24 +39,6 @@ class SearchBox extends Component {
     )
   }
 }
-
-// const SearchBox = (props) => {
-//   return (
-//     <div className="flex-heading">
-//       <h3> Search Headlines and Twitter </h3>
-//       <form onSubmit={props.handleOnSubmit}>
-//         <input
-//           onChange={props.handleOnChange}
-//           type="text"
-//           value={props.search}
-//         />
-//         <input
-//           type="submit"
-//           value="Twogle"
-//         />
-//       </form>
-//     </div>)
-// }
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
