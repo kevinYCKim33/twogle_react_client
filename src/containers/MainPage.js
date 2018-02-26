@@ -12,7 +12,7 @@ import { connect } from 'react-redux'; // lets you connect to the redux store
 import { bindActionCreators } from 'redux'; // lets you link dispatch actions directly to props
 import KevinKim from '../components/KevinKim'
 import JamesBond from '../components/JamesBond'
-
+import {Row, Col} from 'react-bootstrap'
 
 class MainPage extends Component {
   render() {
@@ -35,6 +35,15 @@ class MainPage extends Component {
           </header>
 
           <div className="App-body">
+
+          <Row className="show-grid">
+            <Col md={6} mdPush={6}>
+              <code>&lt;{'Col md={6} mdPush={6}'} /&gt;</code>
+            </Col>
+            <Col md={6} mdPull={6}>
+              <code>&lt;{'Col md={6} mdPull={6}'} /&gt;</code>
+            </Col>
+          </Row>
 
             <div id="flex-body">
               <div>
