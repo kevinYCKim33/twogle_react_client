@@ -11,7 +11,7 @@ const SearchBox = (props) => {
         />
         <input
           type="submit"
-          value="Twogle"
+          value="Search"
           className="btn-sm btn-outline-primary"
         />
       </form>

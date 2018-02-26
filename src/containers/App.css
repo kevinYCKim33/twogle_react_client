@@ -20,17 +20,16 @@
   color: white;
 }
 
-#searchform {
-
+#searchform > form > input[type="text"]:nth-child(1) {
+  width: 300px;
 }
+
 
 .btn-sm {
   padding: 1px 1px;
   font-size: 15px;
   border-radius: 0px;
 }
-
-
 
 #searchform > form > input.btn-sm.btn-outline-primary:hover{
   background-color: red;
