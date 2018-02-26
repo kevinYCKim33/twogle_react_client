@@ -12,6 +12,7 @@ class App extends Component {
         <div>
           <Route exact path="/" component={MainPage}/>
           <Route exact path="/history" component={HistoryPage}/>
+
         </div>
       </Router>
     );

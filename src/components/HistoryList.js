@@ -3,7 +3,6 @@ import { PageHeader, Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-b
 import { NavLink, Link } from 'react-router-dom';
 
 const HistoryList = (props) => {
-  // debugger;
   const searches = props.search.prevSearches
   let searchHistory;
   if (searches.length > 0) {

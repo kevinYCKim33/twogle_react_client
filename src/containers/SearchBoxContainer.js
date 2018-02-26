@@ -5,6 +5,11 @@ import { bindActionCreators } from 'redux'; // lets you link dispatch actions di
 import SearchBox from '../components/SearchBox';
 
 class SearchBoxContainer extends Component {
+  constructor() {
+    super();
+    this.handleOnSubmit = this.handleOnSubmit.bind(this);
+  }
+
   componentDidMount() {
     this.props.retrieveSearches();
   }
@@ -19,10 +24,12 @@ class SearchBoxContainer extends Component {
 
   handleOnSubmit = (e) => {
     e.preventDefault();
-    this.props.storeSearch(this.props.search.keywords);
-    this.props.fetchHeadlines(this.props.search.keywords);
+    const search = this.props.search.keywords
+    this.props.history.push('searches/' + encodeURIComponent(search))
+    this.props.storeSearch(search);
+    this.props.fetchHeadlines(search);
     this.props.deleteTweets();
-    this.props.fetchTweets(this.props.search.keywords);
+    this.props.fetchTweets(search);
   }
 
   render() {
