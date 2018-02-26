@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import 'isomorphic-fetch';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Route, Switch } from 'react-router-dom';
 import SearchBoxContainer from './SearchBoxContainer'
 import HeadlineList from '../components/HeadlineList'
 import TweetList from '../components/TweetList'
 import ZeroResults from '../components/ZeroResults'
 import { fetchHeadlines } from '../actions/headlineActions'
 import { fetchTweets, deleteTweets } from '../actions/twitterActions'
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { connect } from 'react-redux'; // lets you connect to the redux store
 import { bindActionCreators } from 'redux'; // lets you link dispatch actions directly to props
+import KevinKim from '../components/KevinKim'
+import JamesBond from '../components/JamesBond'
+
 
 class MainPage extends Component {
   render() {
@@ -19,26 +22,14 @@ class MainPage extends Component {
             <h1 className="App-title">Twogle</h1>
           </header>
           <div style={{ borderBottom: '2px solid black', paddingBottom: '10px', marginBottom: '12px' }}>
-            <NavLink
-              style={{ marginRight: '10px' }}
-              to="/history"
-            >
+            <NavLink style={{ marginRight: '10px' }} to="/history">
               View History
             </NavLink>
-            <NavLink
-              style={{ marginRight: '10px' }}
-              to="/movies"
-            >
-              Movies
-            </NavLink>
-            <NavLink
-              style={{ marginRight: '10px' }}
-              to="/movies/new"
-            >
-              Add Movie
-            </NavLink>
           </div>
-
+          <Link style={{ marginRight: '12px' }} key="1" to={`kevin/bond`}>JamesBond</Link>
+          <div>
+            <Route path={`${this.props.match.url}/bond`} component={JamesBond}/>
+          </div>
           <div className="App-body">
             <div className="flex-heading">
               <SearchBoxContainer

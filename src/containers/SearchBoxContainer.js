@@ -25,7 +25,7 @@ class SearchBoxContainer extends Component {
   handleOnSubmit = (e) => {
     e.preventDefault();
     const search = this.props.search.keywords
-    this.props.history.push('searches/' + encodeURIComponent(search))
+    // this.props.history.push(encodeURIComponent(search))
     this.props.storeSearch(search);
     this.props.fetchHeadlines(search);
     this.props.deleteTweets();
