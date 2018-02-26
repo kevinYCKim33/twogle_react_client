@@ -14,6 +14,8 @@ import KevinKim from '../components/KevinKim'
 import JamesBond from '../components/JamesBond'
 import {Row, Col} from 'react-bootstrap'
 import twitterLogo from '../twitter2.jpg';
+import newsAPILogo from '../NewsApiLogo.png';
+
 
 class MainPage extends Component {
   render() {
@@ -39,7 +41,7 @@ class MainPage extends Component {
 
           <Row className="show-grid">
             <Col md={6} mdPush={6}>
-              column 1
+              <img style={{width: "50px"}} src={newsAPILogo} />
             </Col>
             <Col md={6} mdPull={6}>
               <img style={{width: "200px"}} src={twitterLogo} />

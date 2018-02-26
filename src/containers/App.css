@@ -6,7 +6,7 @@
 /* Set a max width to the content*/
 .App-header {
   display: flex;
-  background-color: rgb(92,132,241);
+  background-color: #f21d61;
   height: 125px;
   padding: 20px;
   color: black;
@@ -85,7 +85,14 @@ h2 {
   justify-content: center;
   align-items: center;
   background-color: #1DA1F2
+}
 
+/* NewsAPI logo column-row */
+#root > div > div > div > div:nth-child(1) > div.col-md-6.col-md-push-6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2d21d;
 }
 
 /* twitter results column */
