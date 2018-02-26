@@ -38,35 +38,46 @@ class MainPage extends Component {
 
           <Row className="show-grid">
             <Col md={6} mdPush={6}>
+              column 1
+            </Col>
+            <Col md={6} mdPull={6}>
+              column 2
+            </Col>
+          </Row>
+
+          <Row className="show-grid">
+            <Col md={6} mdPush={6}>
               <code>&lt;{'Col md={6} mdPush={6}'} /&gt;</code>
+              {this.props.headlines.results === false &&
+                <ZeroResults
+                  media="NewsAPI"
+                  searchedTerms={this.props.headlines.submittedSearch}
+                />
+              }
+              {this.props.headlines.results.length > 0 &&
+                <HeadlineList headlines={this.props.headlines}/>
+              }
             </Col>
             <Col md={6} mdPull={6}>
               <code>&lt;{'Col md={6} mdPull={6}'} /&gt;</code>
+              {this.props.tweets.results === false &&
+                <ZeroResults
+                  media="Twitter"
+                  searchedTerms={this.props.tweets.submittedSearch}
+                />
+              }
+              {this.props.tweets.results.length > 0 &&
+                <TweetList tweets={this.props.tweets}/>
+              }
             </Col>
           </Row>
 
             <div id="flex-body">
               <div>
-                {this.props.headlines.results === false &&
-                  <ZeroResults
-                    media="NewsAPI"
-                    searchedTerms={this.props.headlines.submittedSearch}
-                  />
-                }
-                {this.props.headlines.results.length > 0 &&
-                  <HeadlineList headlines={this.props.headlines}/>
-                }
+
               </div>
               <div>
-                {this.props.tweets.results === false &&
-                  <ZeroResults
-                    media="Twitter"
-                    searchedTerms={this.props.tweets.submittedSearch}
-                  />
-                }
-                {this.props.tweets.results.length > 0 &&
-                  <TweetList tweets={this.props.tweets}/>
-                }
+
               </div>
 
             </div>
