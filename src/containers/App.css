@@ -65,16 +65,22 @@ h2 {
   justify-content: center;
 }
 
+/* top row of bootstrap */
 #root > div > div > div > div:nth-child(1) {
   border: 1px solid black;
   margin: 0px;
+  height: 75px;
 }
 
+#root > div > div > div > div:nth-child(1) > div {
+  color: red;
+  border: 1px solid pink;
+  height: 75px;
+}
+
+
 .twitter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  padding-left: 15px;
 }
 
 
