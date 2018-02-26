@@ -78,9 +78,16 @@ h2 {
   height: 75px;
 }
 
+/* twitter logo column-row */
+#root > div > div > div > div:nth-child(1) > div.col-md-6.col-md-pull-6 {
+  background-color: #1dcaff;
+}
 
 .twitter {
-  padding-left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 
