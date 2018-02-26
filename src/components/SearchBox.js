@@ -3,7 +3,7 @@ import React from 'react';
 const SearchBox = (props) => {
   return (
     <div className="flex-heading">
-      <h3> Search Headlines and Twitter </h3>
+      <h3> Twogle <small style={{color: 'black'}}>Search Twitter and NewsAPI simultaneously</small> </h3>
       <form onSubmit={props.handleOnSubmit}>
         <input
           onChange={props.handleOnChange}

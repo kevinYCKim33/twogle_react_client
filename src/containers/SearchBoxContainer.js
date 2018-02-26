@@ -33,11 +33,11 @@ class SearchBoxContainer extends Component {
   }
 
   render() {
-    const searchHistory = this.props.search.prevSearches.map(search => {
-      return (
-        <li> {search.keywords} </li>
-      )
-    })
+    // const searchHistory = this.props.search.prevSearches.map(search => {
+    //   return (
+    //     <li> {search.keywords} </li>
+    //   )
+    // })
     return(
       <div>
       <SearchBox
@@ -46,9 +46,6 @@ class SearchBoxContainer extends Component {
         inputValue={this.props.search.keywords}
         handleOnClick={this.handleClearHistory}
       />
-      <ul>
-        {searchHistory}
-      </ul>
       </div>
     )
   }

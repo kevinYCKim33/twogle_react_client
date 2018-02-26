@@ -19,18 +19,6 @@ class MainPage extends Component {
     return (
         <div className="App">
           <header className="App-header">
-            <h1 className="App-title">Twogle</h1>
-          </header>
-          <div style={{ borderBottom: '2px solid black', paddingBottom: '10px', marginBottom: '12px' }}>
-            <NavLink style={{ marginRight: '10px' }} to="/history">
-              View History
-            </NavLink>
-          </div>
-          <Link style={{ marginRight: '12px' }} key="1" to={`kevin/bond`}>JamesBond</Link>
-          <div>
-            <Route path={`${this.props.match.url}/bond`} component={JamesBond}/>
-          </div>
-          <div className="App-body">
             <div className="flex-heading">
               <SearchBoxContainer
                 fetchHeadlines={this.props.fetchHeadlines}
@@ -39,8 +27,15 @@ class MainPage extends Component {
                 history={this.props.history}
               />
             </div>
+            <div style={{paddingBottom: '10px', marginBottom: '12px' }}>
+              <NavLink style={{ marginRight: '10px', color: 'black' }} to="/history">
+                View History
+              </NavLink>
+            </div>
+          </header>
 
-            <br />
+          <div className="App-body">
+
             <div id="flex-body">
               <div>
                 {this.props.headlines.results === false &&
