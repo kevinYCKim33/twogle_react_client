@@ -13,7 +13,7 @@ import { bindActionCreators } from 'redux'; // lets you link dispatch actions di
 import KevinKim from '../components/KevinKim'
 import JamesBond from '../components/JamesBond'
 import {Row, Col} from 'react-bootstrap'
-import twitterLogo from '../twitterLogo.jpg';
+import twitterLogo from '../twitter2.jpg';
 
 class MainPage extends Component {
   render() {
@@ -42,7 +42,7 @@ class MainPage extends Component {
               column 1
             </Col>
             <Col md={6} mdPull={6}>
-              <img style={{width: "75px"}} src={twitterLogo} />
+              <img style={{width: "200px"}} src={twitterLogo} />
             </Col>
           </Row>
 

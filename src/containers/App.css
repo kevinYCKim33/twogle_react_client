@@ -72,6 +72,7 @@ h2 {
   height: 75px;
 }
 
+/* both columns showing logo */
 #root > div > div > div > div:nth-child(1) > div {
   color: red;
   border: 1px solid pink;
@@ -80,9 +81,14 @@ h2 {
 
 /* twitter logo column-row */
 #root > div > div > div > div:nth-child(1) > div.col-md-6.col-md-pull-6 {
-  background-color: #1dcaff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1DA1F2
+
 }
 
+/* twitter results column */
 .twitter {
   display: flex;
   justify-content: center;
