@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { WrapperApp } from './containers/App';
+import App from './containers/App';
 // npm install redux react-redux --save
 // npm install --save redux
 // npm install --save redux-thunk
@@ -22,7 +22,7 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <WrapperApp />
+    <App />
   </Provider>,
   document.getElementById('root')
 );
