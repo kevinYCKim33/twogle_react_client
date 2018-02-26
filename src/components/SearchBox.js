@@ -2,8 +2,7 @@ import React from 'react';
 
 const SearchBox = (props) => {
   return (
-    <div className="flex-heading">
-      <h3> Twogle <small style={{color: 'black'}}>Search Twitter and NewsAPI simultaneously</small> </h3>
+    <div id="searchform">
       <form onSubmit={props.handleOnSubmit}>
         <input
           onChange={props.handleOnChange}
@@ -13,10 +12,8 @@ const SearchBox = (props) => {
         <input
           type="submit"
           value="Twogle"
+          className="btn-sm btn-outline-primary"
         />
-        <button onClick={props.handleOnClick}>
-          Clear History
-        </button>
       </form>
     </div>
   )

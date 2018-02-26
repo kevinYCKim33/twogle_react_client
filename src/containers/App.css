@@ -2,13 +2,46 @@
   border:1px solid black;
 } */
 
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 /* Set a max width to the content*/
 .App-header {
+  display: flex;
   background-color: rgb(92,132,241);
   height: 125px;
   padding: 20px;
   color: black;
-  /* text-align: center; */
+  justify-content: space-between;
+  align-items: center;
+}
+
+#title {
+  font-size: 30px;
+  font-family: 'Permanent Marker', cursive;
+  color: white;
+}
+
+#searchform {
+
+}
+
+.btn-sm {
+  padding: 1px 1px;
+  font-size: 15px;
+  border-radius: 0px;
+}
+
+
+
+#searchform > form > input.btn-sm.btn-outline-primary:hover{
+  background-color: red;
+}
+
+#history-log {
+  align-self: flex-start;
+}
+
+h2 {
+  font-family: 'Bungee Inline', cursive;
 }
 
 .App-body {
@@ -41,17 +74,6 @@
   background-color: white;
   box-shadow: 5px 4px 3px 0px rgba(12,12,12,0.18);
 }
-
-/* Searchbox */
-.flex-heading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-
-
 
 /* tweets and news */
 #flex-body {

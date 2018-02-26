@@ -39,14 +39,12 @@ class SearchBoxContainer extends Component {
     //   )
     // })
     return(
-      <div>
       <SearchBox
         handleOnSubmit={this.handleOnSubmit}
         handleOnChange={this.handleOnChange}
         inputValue={this.props.search.keywords}
         handleOnClick={this.handleClearHistory}
       />
-      </div>
     )
   }
 }

@@ -19,16 +19,16 @@ class MainPage extends Component {
     return (
         <div className="App">
           <header className="App-header">
-            <div className="flex-heading">
+              <div id="title">Twogle</div>
               <SearchBoxContainer
                 fetchHeadlines={this.props.fetchHeadlines}
                 deleteTweets={this.props.deleteTweets}
                 fetchTweets={this.props.fetchTweets}
                 history={this.props.history}
               />
-            </div>
-            <div style={{paddingBottom: '10px', marginBottom: '12px' }}>
-              <NavLink style={{ marginRight: '10px', color: 'black' }} to="/history">
+
+            <div id="history-log">
+              <NavLink to="/history" style={{color: 'white'}}>
                 View History
               </NavLink>
             </div>
