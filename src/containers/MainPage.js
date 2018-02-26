@@ -47,18 +47,21 @@ class MainPage extends Component {
 
           <Row className="show-grid">
             <Col md={6} mdPush={6}>
-              <code>&lt;{'Col md={6} mdPush={6}'} /&gt;</code>
-              {this.props.headlines.results === false &&
-                <ZeroResults
-                  media="NewsAPI"
-                  searchedTerms={this.props.headlines.submittedSearch}
-                />
-              }
-              {this.props.headlines.results.length > 0 &&
-                <HeadlineList headlines={this.props.headlines}/>
-              }
+              <div className="newsAPI">
+                <code>&lt;{'Col md={6} mdPush={6}'} /&gt;</code>
+                {this.props.headlines.results === false &&
+                  <ZeroResults
+                    media="NewsAPI"
+                    searchedTerms={this.props.headlines.submittedSearch}
+                  />
+                }
+                {this.props.headlines.results.length > 0 &&
+                  <HeadlineList headlines={this.props.headlines}/>
+                }
+              </div>
             </Col>
             <Col md={6} mdPull={6}>
+              <div className="twitter">
               <code>&lt;{'Col md={6} mdPull={6}'} /&gt;</code>
               {this.props.tweets.results === false &&
                 <ZeroResults
@@ -67,20 +70,13 @@ class MainPage extends Component {
                 />
               }
               {this.props.tweets.results.length > 0 &&
-                <TweetList tweets={this.props.tweets}/>
+                <TweetList
+                  tweets={this.props.tweets}
+                  style={{color: "red"}}/>
               }
+              </div>
             </Col>
           </Row>
-
-            <div id="flex-body">
-              <div>
-
-              </div>
-              <div>
-
-              </div>
-
-            </div>
           </div>
         </div>
     )

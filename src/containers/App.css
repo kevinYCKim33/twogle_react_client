@@ -70,6 +70,14 @@ h2 {
   margin: 0px;
 }
 
+.twitter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
 .list-history {
   border: 0px 1px 1px 1px solid gray;
   padding-top: 5px;
@@ -77,12 +85,6 @@ h2 {
   width: 600px;
   background-color: white;
   box-shadow: 5px 4px 3px 0px rgba(12,12,12,0.18);
-}
-
-/* tweets and news */
-#flex-body {
-  display: flex;
-  justify-content: space-around;
 }
 
 @keyframes App-logo-spin {
