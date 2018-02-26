@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import 'isomorphic-fetch';
-
-import './App.css';
-import 'isomorphic-fetch';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import SearchBoxContainer from './SearchBoxContainer'
 import HeadlineList from '../components/HeadlineList'

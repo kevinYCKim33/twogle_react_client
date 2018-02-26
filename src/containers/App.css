@@ -1,7 +1,8 @@
-/* .App {
-  text-align: center;
+/* div {
+  border:1px solid black;
 } */
 
+/* Set a max width to the content*/
 .App-header {
   background-color: #222;
   height: 150px;
@@ -27,12 +28,29 @@
   /* width: 500px; */
 }
 
+.History-Body {
+  display: flex;
+  justify-content: center;
+}
+
+.list-history {
+  border: 0px 1px 1px 1px solid gray;
+  padding-top: 5px;
+  width: 600px;
+  background-color: white;
+  box-shadow: 5px 4px 3px 0px rgba(12,12,12,0.18);
+}
+
 /* Searchbox */
 .flex-heading {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+
+
+
 
 /* tweets and news */
 #flex-body {
