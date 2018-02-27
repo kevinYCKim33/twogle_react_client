@@ -14,6 +14,21 @@
   align-items: center;
 }
 
+.History-header {
+  display: flex;
+  background-color: #f21d61;
+  height: 55px;
+  padding: 20px;
+  color: black;
+  /* justify-content: space-between;
+  align-items: center; */
+}
+
+#history-title {
+  color: white;
+  font-size: 16px;
+}
+
 #title {
   font-size: 30px;
   font-family: 'Permanent Marker', cursive;
@@ -65,9 +80,24 @@ h2 {
   justify-content: center;
 }
 
+/* row set up of history page */
+#History > div {
+  border: 1px solid blue;
+}
+
+/* left column of history page */
+#History > div > div.col-md-3.col-xs-5 {
+  border: 1px solid red;
+}
+
+/* right column of history page */
+#History > div > div.col-md-9.col-xs-13 {
+  border: 1px solid green;
+}
+
 /* top row of bootstrap */
 #root > div > div > div > div:nth-child(1) {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin: 0px;
   height: 75px;
 }
@@ -75,7 +105,7 @@ h2 {
 /* both columns showing logo */
 #root > div > div > div > div:nth-child(1) > div {
   color: red;
-  border: 1px solid pink;
+  /* border: 1px solid pink; */
   height: 75px;
 }
 
