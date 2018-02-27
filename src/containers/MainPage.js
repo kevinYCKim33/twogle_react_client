@@ -52,7 +52,6 @@ class MainPage extends Component {
           <Row className="show-grid">
             <Col md={6} mdPush={6}>
               <div className="newsAPI">
-                <code>&lt;{'Col md={6} mdPush={6}'} /&gt;</code>
                 {this.props.headlines.results === false &&
                   <ZeroResults
                     media="NewsAPI"
@@ -66,7 +65,6 @@ class MainPage extends Component {
             </Col>
             <Col md={6} mdPull={6}>
               <div className="twitter">
-              <code>&lt;{'Col md={6} mdPull={6}'} /&gt;</code>
               {this.props.tweets.results === false &&
                 <ZeroResults
                   media="Twitter"

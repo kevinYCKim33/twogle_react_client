@@ -24,7 +24,6 @@ const toStandardTime = (militaryTime) => {
 }
 
 export const exactDate = (RailsTime) => {
-  // debugger;
   const theExactDate = RailsTime
   const date = new Date(theExactDate).toString().split(" ");
   const monthDayYear = date.slice(1,3).join(" ") + ", " + date[3];

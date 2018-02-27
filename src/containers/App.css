@@ -93,7 +93,14 @@ h2 {
 }
 
 /* each history log */
-#history-column-container > div.col-md-9.col-xs-13 > ul > li {
+/* #history-column-container > div.col-md-9.col-xs-13 > ul > li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: rgb(71,72,95)
+} */
+
+.list-group-item {
   display: flex;
   justify-content: space-between;
   font-size: 13px;
@@ -102,6 +109,13 @@ h2 {
 
 .search-date {
   color: gray;
+}
+
+#about {
+  /* border: 1px solid red; */
+  padding-top: 20px;
+  padding-left: 20px;
+  width: 475px;
 }
 
 /* right column of history page */
