@@ -23,14 +23,35 @@ const HistoryList = (props) => {
         <div id="history-title">History</div>
       </header>
 
-      <Row className="show-grid">
         <Col xs={5} md={3}>
           <code>&lt;{'Col xs={5} md={3}'} /&gt;</code>
         </Col>
         <Col xs={13} md={9}>
           <code>&lt;{'Col xs={13} md={9}'} /&gt;</code>
+          <p> some text </p>
+          <p> some text </p>
+          <p> some text </p>
+          <p> some text </p>
+          <p> some text </p>
+          <p> some text </p>
+          <p> some text </p>
+          <p> some text </p>
+          <p> some text </p>
+          <p> some text </p>
+          <p> some text </p>
+          <p> some text </p>
+          <p> some text </p>
+          <p> some text </p>
+          <p> some text </p>
+          <p> some text </p>
+          <p> some text </p>
+          <p> some text </p>
+          <p> some text </p>
+          <p> some text </p>
+          <p> some text </p>
+          <p> some text </p>
+
         </Col>
-      </Row>
 
     </div>
   )
