@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import MainPage from './MainPage'
-import HistoryPage from './HistoryPage'
-import KevinKim from '../components/KevinKim'
+import MainPage from './MainPage';
+import AboutPage from '../components/AboutPage';
+import HistoryPage from './HistoryPage';
+
 
 
 class App extends Component {
@@ -12,8 +13,8 @@ class App extends Component {
       <Router>
         <div>
           <Route exact path="/" component={MainPage}/>
+          <Route exact path="/about" component={AboutPage}/>
           <Route exact path="/history" component={HistoryPage}/>
-          <Route exact path="/kevinkim" component={KevinKim}/>
         </div>
       </Router>
     );

@@ -10,8 +10,6 @@ import { fetchTweets, deleteTweets } from '../actions/twitterActions'
 import { NavLink, Link } from 'react-router-dom';
 import { connect } from 'react-redux'; // lets you connect to the redux store
 import { bindActionCreators } from 'redux'; // lets you link dispatch actions directly to props
-import KevinKim from '../components/KevinKim'
-import JamesBond from '../components/JamesBond'
 import {Row, Col} from 'react-bootstrap'
 import twitterLogo from '../twitter2.jpg';
 import newsAPILogo from '../NewsApiLogo.png';
@@ -31,6 +29,9 @@ class MainPage extends Component {
               />
 
             <div id="history-log">
+              <NavLink to="/about" style={{color: 'white', marginRight: '10px'}}>
+                About
+              </NavLink>
               <NavLink to="/history" style={{color: 'white'}}>
                 View History
               </NavLink>
