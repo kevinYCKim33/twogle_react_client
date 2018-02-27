@@ -88,6 +88,8 @@ h2 {
 /* left column of history page */
 #History > div > div.col-md-3.col-xs-5 {
   border: 1px solid red;
+  font-size: 12px;
+  color: rgb(71,72,95)
 }
 
 /* right column of history page */
@@ -104,7 +106,7 @@ h2 {
   background-color: white;
   border: 1px solid green;
   box-shadow: 5px 4px 3px 0px rgba(12,12,12,0.18);
-  
+
 }
 
 /* top row of bootstrap */

@@ -25,7 +25,7 @@ const HistoryList = (props) => {
       <br />
       <div id="history-column-container">
         <Col xs={5} md={3}>
-          <code>&lt;{'Col xs={5} md={3}'} /&gt;</code>
+          <b>Clear Browsing History</b>
         </Col>
         <Col xs={13} md={9}>
           <code>&lt;{'Col xs={13} md={9}'} /&gt;</code>
