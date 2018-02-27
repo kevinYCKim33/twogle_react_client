@@ -100,6 +100,7 @@ h2 {
   color: rgb(71,72,95)
 } */
 
+/* each history log */
 .list-group-item {
   display: flex;
   justify-content: space-between;
