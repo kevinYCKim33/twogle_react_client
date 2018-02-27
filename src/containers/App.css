@@ -92,6 +92,18 @@ h2 {
   color: rgb(71,72,95)
 }
 
+/* each history log */
+#history-column-container > div.col-md-9.col-xs-13 > ul > li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: rgb(71,72,95)
+}
+
+.search-date {
+  color: gray;
+}
+
 /* right column of history page */
 /* #History > div > div.col-md-9.col-xs-13 {
   border: 1px solid green;

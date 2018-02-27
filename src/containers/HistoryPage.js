@@ -12,7 +12,10 @@ class HistoryPage extends Component {
 
   render() {
     return (
-      <HistoryList search={this.props.search}/>
+      <HistoryList
+        search={this.props.search}
+        clearHistory={this.props.clearHistory}
+      />
     )
   }
 }
