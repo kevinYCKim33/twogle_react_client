@@ -22,7 +22,8 @@ const HistoryList = (props) => {
       <header className="History-header">
         <div id="history-title">History</div>
       </header>
-
+      <br />
+      <div id="history-column-container">
         <Col xs={5} md={3}>
           <code>&lt;{'Col xs={5} md={3}'} /&gt;</code>
         </Col>
@@ -52,7 +53,9 @@ const HistoryList = (props) => {
           <p> some text </p>
 
         </Col>
-
+      </div>
+        <br />
+        <br />
     </div>
   )
 }

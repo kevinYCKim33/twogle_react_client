@@ -24,6 +24,10 @@
   align-items: center; */
 }
 
+#history-column-container {
+  padding: 10px;
+}
+
 #history-title {
   color: white;
   font-size: 16px;
@@ -75,9 +79,6 @@ h2 {
   /* width: 500px; */
 }
 
-.History-Body {
-  padding: 10px;
-}
 
 /* row set up of history page */
 #History > div {
@@ -90,13 +91,20 @@ h2 {
 }
 
 /* right column of history page */
-#History > div > div.col-md-9.col-xs-13 {
+/* #History > div > div.col-md-9.col-xs-13 {
   border: 1px solid green;
-}
+} */
 
-#History > div > div > div.col-md-9.col-xs-13 {
+/* #History > div > div > div.col-md-9.col-xs-13 {
   border: 1px solid green;
   padding-top: 30px;
+} */
+
+#history-column-container > div.col-md-9.col-xs-13 {
+  background-color: white;
+  border: 1px solid green;
+  box-shadow: 5px 4px 3px 0px rgba(12,12,12,0.18);
+  
 }
 
 /* top row of bootstrap */
