@@ -1,20 +1,15 @@
 import React from 'react';
 // import { PageHeader, Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
-import { NavLink, Link } from 'react-router-dom';
 import {Button, Row, Col, ListGroup, ListGroupItem} from 'react-bootstrap'
-import { exactDate } from '../helpers/timeConverter.js'
+import {HistoryLog} from './HistoryLog.js';
 
 const HistoryList = (props) => {
   const searches = props.search.prevSearches
   let searchHistory;
   if (searches.length > 0) {
     searchHistory = searches.map(search => {
-      const timeLastSearched = exactDate(search.updated_at)
       return (
-        <ListGroupItem>
-          <div><b>{search.keywords}</b></div>
-          <div className="search-date">{timeLastSearched}</div>
-        </ListGroupItem>
+        <HistoryLog search={search}/>
       )
     })
   }
