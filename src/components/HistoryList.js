@@ -34,12 +34,18 @@ const HistoryList = (props) => {
             <b>Clear Search History</b>
           </Link>
         </Col>
-        <Col xs={13} md={9}>
-          <ListGroup>
-            {searchHistory}
-          </ListGroup>
-
-        </Col>
+        {searches.length > 0 &&
+          <Col xs={13} md={9}>
+            <ListGroup>
+              {searchHistory}
+            </ListGroup>
+          </Col>
+        }
+        {searches.length === 0 &&
+          <Col className="no-history" xs={13} md={9}>
+            <div><b>Your browsing history appears here.</b></div>
+          </Col>
+        }
       </div>
         <br />
         <br />

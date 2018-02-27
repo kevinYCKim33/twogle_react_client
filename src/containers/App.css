@@ -82,12 +82,12 @@ h2 {
 
 /* row set up of history page */
 #History > div {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 
 /* left column of history page */
 #History > div > div.col-md-3.col-xs-5 {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   font-size: 12px;
   color: rgb(71,72,95)
 }
@@ -114,11 +114,24 @@ h2 {
   padding-top: 30px;
 } */
 
+/* container where history logs are logged */
 #history-column-container > div.col-md-9.col-xs-13 {
+  /* border: 1px solid green; */
   background-color: white;
-  border: 1px solid green;
   box-shadow: 5px 4px 3px 0px rgba(12,12,12,0.18);
+  padding: 3px;
+}
 
+/* my div when no history is stored in the log */
+#history-column-container > div.no-history.col-md-9.col-xs-13 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  height: 500px;
+  style: bold;
+  border: none;
+  box-shadow: none;
 }
 
 /* top row of bootstrap */
@@ -130,8 +143,8 @@ h2 {
 
 /* both columns showing logo */
 #root > div > div > div > div:nth-child(1) > div {
-  color: red;
   /* border: 1px solid pink; */
+  color: red;
   height: 75px;
 }
 
