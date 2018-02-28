@@ -51,14 +51,13 @@ to load up gems.
 ### API Tokens
 
 
-With the Twitter's Bearer Token and the key you've attained (see  the links on __Things You Will Need__ section above):
+With the Twitter's Bearer Token and the NewsAPI key you've attained (see  the links on __Things You Will Need__ section above):
 
 Create a `.env` file in the root of the API repo and paste in the following
 
 ```
 BEARER_TOKEN = YOUR_TWITTER_BEARER_TOKEN
 NEWS_API_KEY = YOUR_NEWS_API_KEY
-
 ```
 
 ### React/Front End
