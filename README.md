@@ -62,7 +62,7 @@ NEWS_API_KEY = YOUR_NEWS_API_KEY
 
 ### React/Front End
 
-Exit out of the api repo, and `cd` into the react-client-repo, then run:
+Exit out of the API repo, and `cd` into the react-client-repo, then run:
 
 ```
 npm install
@@ -71,7 +71,7 @@ npm install
 
 ## Usage
 
-In the api repo, run the following command:
+In the API repo, run the following command:
 
 ```
 rails s -p 3001
