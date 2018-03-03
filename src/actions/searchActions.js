@@ -6,7 +6,7 @@ export const updateSearch = (searchKeyWords) => {
 
 export const storeSearch = (searchKeyWords) => {
   return function(dispatch) {
-    return fetch('http://localhost:3001/api/searches', {
+    return fetch('http://twogle-api.herokuapp.com/api/searches', {
       method: "post",
       headers: {
         'Accept': 'application/json',

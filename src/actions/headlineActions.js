@@ -2,7 +2,7 @@ import fetch from 'isomorphic-fetch';
 
 export const fetchHeadlines = (searchKeyWords) => {
   return function(dispatch) {
-    return fetch('http://localhost:3001/api/headlines/load_headlines/', {
+    return fetch('http://twogle-api.herokuapp.com/api/headlines/load_headlines/', {
       method: "post",
       headers: {
         'Accept': 'application/json',
