@@ -27,7 +27,7 @@ export const retrieveSearches = () => {
   return function(dispatch) {
     return fetch('https://twogle-api.herokuapp.com/api/searches')
       .then(response => {
-        return response.json()
+        console.log(response)
       }).then(searches => {
         dispatch({type: 'RETRIEVE_SEARCHES', prevSearches: searches})
       })
