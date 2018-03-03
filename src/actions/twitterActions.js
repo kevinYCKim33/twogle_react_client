@@ -3,7 +3,7 @@ import fetch from 'isomorphic-fetch';
 export const fetchTweets = (searchKeyWords) => {
   return function(dispatch) {
     // dispatch({type: LOADING_TWEETS})
-    return fetch('http://twogle-api.herokuapp.com/api/tweets/load_tweets/', {
+    return fetch('https://twogle-api.herokuapp.com/api/tweets/load_tweets/', {
       method: "post",
       headers: {
         'Accept': 'application/json',

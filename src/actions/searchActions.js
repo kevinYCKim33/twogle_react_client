@@ -6,7 +6,7 @@ export const updateSearch = (searchKeyWords) => {
 
 export const storeSearch = (searchKeyWords) => {
   return function(dispatch) {
-    return fetch('http://twogle-api.herokuapp.com/api/searches', {
+    return fetch('https://twogle-api.herokuapp.com/api/searches', {
       method: "post",
       headers: {
         'Accept': 'application/json',
@@ -25,7 +25,7 @@ export const storeSearch = (searchKeyWords) => {
 
 export const retrieveSearches = () => {
   return function(dispatch) {
-    return fetch('http://localhost:3001/api/searches')
+    return fetch('https://twogle-api.herokuapp.com/api/searches')
       .then(response => {
         return response.json()
       }).then(searches => {
@@ -36,7 +36,7 @@ export const retrieveSearches = () => {
 
 export const clearHistory = () => {
   return function(dispatch) {
-    return fetch('http://localhost:3001/api/searches/clear')
+    return fetch('https://twogle-api.herokuapp.com/api/searches/clear')
       .then(() => {
         dispatch({type: "CLEAR_HISTORY"})
       })
