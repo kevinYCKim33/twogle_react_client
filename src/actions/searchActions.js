@@ -15,10 +15,6 @@ export const storeSearch = (searchKeyWords) => {
       body: JSON.stringify({
         search: searchKeyWords
       })
-    }).then(response => {
-      return response.json()
-    }).then(search => {
-      dispatch({type: 'STORE_SEARCH', search: search})
     })
   }
 }
@@ -27,7 +23,7 @@ export const retrieveSearches = () => {
   return function(dispatch) {
     return fetch('https://twogle-api.herokuapp.com/api/searches')
       .then(response => {
-        console.log(response)
+        return response.json()
       }).then(searches => {
         dispatch({type: 'RETRIEVE_SEARCHES', prevSearches: searches})
       })
