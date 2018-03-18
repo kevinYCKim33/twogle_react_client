@@ -4,7 +4,7 @@ import Headline from './Headline';
 const HeadlineList = (props) => {
   return (
     <div>
-      <h3>{props.headlines.results.length} headlines returned for {props.headlines.submittedSearch}</h3>
+      <h4><b>{props.headlines.results.length}</b> headlines returned for <b>{props.headlines.submittedSearch}</b></h4>
       {props.headlines.results.map((headline, index) => {
         return (
           <Headline key={index} headline={headline}/>

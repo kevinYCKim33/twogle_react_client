@@ -4,7 +4,6 @@ const headlineListReducer = (state = {results: [], submittedSearch: ''}, action)
     case 'FETCH_HEADLINES':
       return {results: action.headlines, submittedSearch: action.submittedSearch}
     case 'NO_HEADLINES_FOUND':
-      // debugger;
       return {results: false, submittedSearch: action.submittedSearch};
     default:
       return state;

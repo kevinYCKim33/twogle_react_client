@@ -25,7 +25,7 @@ class TweetList extends React.Component {
 
     return (
       <div >
-        <h3>{this.props.tweets.results.length} tweets returned </h3>
+        <h4><b>{this.props.tweets.results.length}</b> tweets returned for <b>{this.props.tweets.submittedSearch}</b> </h4>
         {tweets}
       </div>
     );

@@ -1,5 +1,5 @@
 const twitterListReducer = (state = {results: [], submittedSearch: ''}, action) => {
-  console.log(action);
+  // console.log(action);
   switch(action.type) {
 
     case 'FETCH_TWEETS':
