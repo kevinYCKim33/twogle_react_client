@@ -77,6 +77,7 @@ h2 {
 /* width of my newscard */
 .newscard {
   /* width: 500px; */
+  /* display: flex; */
 }
 
 
@@ -100,12 +101,20 @@ h2 {
   color: rgb(71,72,95)
 } */
 
+/* #history-column-container > div.col-md-9.col-xs-13 > div > span:nth-child(1) */
+
 /* each history log */
-.list-group-item {
+.history-log {
   display: flex;
   justify-content: space-between;
   font-size: 13px;
   color: rgb(71,72,95)
+}
+
+.headline-panel {
+  /* padding: 0px 0px; */
+  margin-bottom: 0px;
+  /* background-color: red; */
 }
 
 .search-date {

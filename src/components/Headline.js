@@ -1,14 +1,16 @@
 import React from 'react';
+import {ListGroupItem} from 'react-bootstrap';
+
 
 const Headline = ({headline}) => {
   return (
-    <div className="newscard">
+    <ListGroupItem href={headline.url} className="headline-panel">
       <img style={{width: "75px"}} src={headline.urlToImage} alt={headline.title} />
       <br />
-      <b><a href={headline.url}>{headline.title}</a></b>
+      <b>{headline.title}</b>
       <div><span style={{color: 'green'}}>({headline.source.name})</span> - {new Date(headline.publishedAt).toString()} </div>
       <div>{headline.description}</div>
-    </div>
+    </ListGroupItem>
   )
 }
 
