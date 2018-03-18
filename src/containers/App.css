@@ -117,6 +117,18 @@ h2 {
   /* background-color: red; */
 }
 
+.flex-headline {
+  display: flex;
+  align-items: flex-start;
+  /* flex-wrap: wrap; */
+  /* flex-direction: column; */
+}
+
+.flex-headline img {
+  width: 100px;
+  padding-right: 10px;
+}
+
 .search-date {
   color: gray;
 }
