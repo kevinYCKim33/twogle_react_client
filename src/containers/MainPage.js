@@ -20,7 +20,7 @@ class MainPage extends Component {
     return (
         <div className="App">
           <header className="App-header">
-              <div id="title">Twogle</div>
+              <div id="title">TWOGLE</div>
               <SearchBoxContainer
                 fetchHeadlines={this.props.fetchHeadlines}
                 deleteTweets={this.props.deleteTweets}
