@@ -5,7 +5,7 @@ import SearchBoxContainer from './SearchBoxContainer'
 import HeadlineList from '../components/HeadlineList'
 import TweetList from '../components/TweetList'
 import ZeroResults from '../components/ZeroResults'
-import { fetchHeadlines } from '../actions/headlineActions'
+import { fetchHeadlines, addDefaultSrc } from '../actions/headlineActions'
 import { fetchTweets, deleteTweets } from '../actions/twitterActions'
 import { NavLink, Link } from 'react-router-dom';
 import { connect } from 'react-redux'; // lets you connect to the redux store
@@ -59,7 +59,10 @@ class MainPage extends Component {
                   />
                 }
                 {this.props.headlines.results.length > 0 &&
-                  <HeadlineList headlines={this.props.headlines}/>
+                  <HeadlineList
+                    headlines={this.props.headlines}
+                    addDefaultSrc={this.props.addDefaultSrc}
+                  />
                 }
               </div>
             </Col>
@@ -90,7 +93,8 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     fetchTweets,
     deleteTweets,
-    fetchHeadlines
+    fetchHeadlines,
+    addDefaultSrc
   }, dispatch)
 }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import Headline from './Headline';
 import {ListGroup} from 'react-bootstrap';
 
+
 const HeadlineList = (props) => {
   return (
     <div>
@@ -9,7 +10,7 @@ const HeadlineList = (props) => {
       <ListGroup>
       {props.headlines.results.map((headline, index) => {
         return (
-            <Headline key={index} headline={headline}/>
+            <Headline key={index} headline={headline} addDefaultSrc={props.addDefaultSrc}/>
         )
       })}
       </ListGroup>

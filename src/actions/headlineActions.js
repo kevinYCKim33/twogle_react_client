@@ -1,4 +1,6 @@
 import fetch from 'isomorphic-fetch';
+import defaultNewsPic from '../Newspaper-Icon.jpg';
+
 //up on WWW!
 export const fetchHeadlines = (searchKeyWords) => {
   return function(dispatch) {
@@ -21,4 +23,8 @@ export const fetchHeadlines = (searchKeyWords) => {
       }
     })
   }
+}
+
+export const addDefaultSrc = (ev) => {
+  ev.target.src = defaultNewsPic
 }
