@@ -1,8 +1,6 @@
 import React from 'react';
 import {ListGroupItem} from 'react-bootstrap';
 import defaultNewsPic from '../Newspaper-Icon.jpg';
-import { connect } from 'react-redux'; // lets you connect to the redux store
-import { bindActionCreators } from 'redux'; // lets you link dispatch actions directly to props
 import { exactDate } from '../helpers/timeConverter.js';
 
 

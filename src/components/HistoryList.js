@@ -1,15 +1,14 @@
 import React from 'react';
-// import { PageHeader, Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
-import {Button, Row, Col, ListGroup, ListGroupItem} from 'react-bootstrap'
-import {HistoryLog} from './HistoryLog.js';
+import { Button, ListGroup } from 'react-bootstrap';
+import { HistoryLog } from './HistoryLog.js';
 
 const HistoryList = (props) => {
   const searches = props.search.prevSearches
   let searchHistory;
   if (searches.length > 0) {
-    searchHistory = searches.map(search => {
+    searchHistory = searches.map((search, i) => {
       return (
-        <HistoryLog search={search}/>
+        <HistoryLog search={search} key={i}/>
       )
     })
   }

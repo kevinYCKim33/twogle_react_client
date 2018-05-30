@@ -1,8 +1,5 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
-import {Row, Col} from 'react-bootstrap'
-import twitterLogo from '../twitter2.jpg';
-import newsAPILogo from '../NewsApiLogo.png';
+import { NavLink } from 'react-router-dom';
 import Logos from '../components/Logos';
 
 const AboutPage = () => {

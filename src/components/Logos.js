@@ -6,10 +6,10 @@ const Logos = () => {
   return (
     <div className="flex">
       <div className="flex-column" id="twitterLogo">
-        <img style={{width: "200px"}} src={twitterLogo} />
+        <img style={{width: "200px"}} src={twitterLogo} alt="twitterLogo" />
       </div>
       <div className="flex-column" id="newsAPILogo">
-        <img style={{width: "50px"}} src={newsAPILogo} />
+        <img style={{width: "50px"}} src={newsAPILogo} alt="newsAPILogo" />
       </div>
     </div>
   )

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import 'isomorphic-fetch';
-import { Route, Switch } from 'react-router-dom';
 import SearchBoxContainer from './SearchBoxContainer';
 import HeadlineList from '../components/HeadlineList';
 import TweetList from '../components/TweetList';
@@ -8,10 +7,9 @@ import Logos from '../components/Logos';
 import ZeroResults from '../components/ZeroResults';
 import { fetchHeadlines, addDefaultSrc } from '../actions/headlineActions';
 import { fetchTweets, deleteTweets } from '../actions/twitterActions';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux'; // lets you connect to the redux store
 import { bindActionCreators } from 'redux'; // lets you link dispatch actions directly to props
-import {Row, Col} from 'react-bootstrap';
 
 
 class MainPage extends Component {
