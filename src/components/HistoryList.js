@@ -18,8 +18,8 @@ const HistoryList = (props) => {
       <header className="History-header">
         <div id="history-title">History</div>
       </header>
-      <div id="buttons-and-logs" style={{display: "flex",  margin: "30px"}}>
-        <div id="button">
+      <div id="clear-and-logs" style={{display: "flex",  margin: "30px"}}>
+        <div id="clear-history">
           <Button
             bsStyle="link"
             onClick={() => props.clearHistory()}

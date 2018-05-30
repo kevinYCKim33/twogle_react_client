@@ -11,7 +11,7 @@ const AboutPage = () => {
       <header className="App-header flex">
           <div id="twogle-logo"><NavLink to="/" style={{color: 'white'}}>Twogle</NavLink></div>
 
-        <div id="history-log">
+        <div id="about-history">
           <NavLink to="/about" style={{color: 'white', marginRight: '10px'}}>
             About
           </NavLink>

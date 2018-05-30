@@ -27,7 +27,7 @@ class MainPage extends Component {
                 history={this.props.history}
               />
 
-            <div id="history-log">
+            <div id="about-history">
               <NavLink to="/about" style={{color: 'white',marginRight: '10px'}}>
                 About
               </NavLink>

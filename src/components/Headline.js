@@ -14,7 +14,7 @@ const Headline = ({headline, addDefaultSrc}) => {
 
   //addDefaultSrc: when image link is broken
   return (
-    <ListGroupItem href={headline.url} className="headline-panel">
+    <ListGroupItem target="_blank" href={headline.url} className="headline-panel">
       <div className="flex-headline">
         <img onError={addDefaultSrc} src={headline.urlToImage} alt={headline.title} />
         <div>

@@ -80,26 +80,15 @@ $twogle-min-width: 1100px;
   padding: 20px;
 }
 
-#history-column-container {
-  padding: 10px;
-}
-
 #history-title {
   color: $twogle-white;
   font-size: 16px;
 }
 
-#history-log {
+#about-history {
   align-self: flex-start;
 }
 
-/* left column of history page */
-#History > div > div.col-md-3.col-xs-5 {
-  font-size: 12px;
-  color: rgb(71,72,95);
-}
-
-/* each history log */
 .history-log {
   display: flex;
   justify-content: space-between;
@@ -141,6 +130,15 @@ $twogle-min-width: 1100px;
   min-width: 500px;
 }
 
+.list-history {
+  border: 0px 1px 1px 1px solid gray;
+  padding-top: 5px;
+  padding-left: 10px;
+  width: 600px;
+  background-color: $twogle-white;
+  box-shadow: 5px 4px 3px 0px rgba(12,12,12,0.18);
+}
+
 .no-history {
   display: flex;
   justify-content: center;
@@ -150,13 +148,4 @@ $twogle-min-width: 1100px;
   style: bold;
   border: none;
   box-shadow: none;
-}
-
-.list-history {
-  border: 0px 1px 1px 1px solid gray;
-  padding-top: 5px;
-  padding-left: 10px;
-  width: 600px;
-  background-color: $twogle-white;
-  box-shadow: 5px 4px 3px 0px rgba(12,12,12,0.18);
 }
