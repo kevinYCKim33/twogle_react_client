@@ -47,7 +47,7 @@ class MainPage extends Component {
             <Col md={6} mdPull={6}>
               <img style={{width: "200px"}} src={twitterLogo} />
             </Col>
-          </Row>
+          </Row>   
 
           <Row className="show-grid">
             <Col md={6} mdPush={6}>
