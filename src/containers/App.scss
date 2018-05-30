@@ -101,6 +101,7 @@ $twogle-min-width: 1100px;
 
 /* each history log */
 .history-log {
+  display: flex;
   justify-content: space-between;
   font-size: 13px;
   color: $navy-blue;
@@ -130,15 +131,17 @@ $twogle-min-width: 1100px;
   width: 475px;
 }
 
-/* container where history logs are logged */
-#history-column-container > div.col-md-9.col-xs-13 {
-  background-color: $twogle-white;
-  box-shadow: 5px 4px 3px 0px rgba(12,12,12,0.18);
-  padding: 3px;
+#button {
+  width: 275px;
+  min-width: 275px;
 }
 
-/* my div when no history is stored in the log */
-#history-column-container > div.no-history.col-md-9.col-xs-13 {
+#logs {
+  width: 1000px;
+  min-width: 500px;
+}
+
+.no-history {
   display: flex;
   justify-content: center;
   align-items: center;

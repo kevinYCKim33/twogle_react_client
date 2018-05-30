@@ -18,9 +18,8 @@ const HistoryList = (props) => {
       <header className="History-header">
         <div id="history-title">History</div>
       </header>
-      <br />
-      <div id="history-column-container">
-        <Col xs={5} md={3}>
+      <div id="buttons-and-logs" style={{display: "flex",  margin: "30px"}}>
+        <div id="button">
           <Button
             bsStyle="link"
             onClick={() => props.clearHistory()}
@@ -28,22 +27,20 @@ const HistoryList = (props) => {
           >
             <b>Clear Search History</b>
           </Button>
-        </Col>
+        </div>
         {searches.length > 0 &&
-          <Col xs={13} md={9}>
-            <ListGroup>
-              {searchHistory}
-            </ListGroup>
-          </Col>
+        <div id="logs">
+          <ListGroup>
+            {searchHistory}
+          </ListGroup>
+        </div>
         }
         {searches.length === 0 &&
-          <Col className="no-history" xs={13} md={9}>
-            <div><b>Your browsing history appears here.</b></div>
-          </Col>
+        <div id="logs" className="no-history">
+          <div><b>Your browsing history appears here.</b></div>
+        </div>
         }
       </div>
-        <br />
-        <br />
     </div>
   )
 }
