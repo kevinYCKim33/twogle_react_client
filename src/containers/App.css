@@ -75,23 +75,24 @@ h2 {
   font-size: large;
 }
 
-#logos {
+.flex {
   display: flex;
 }
 
-#twitterLogo, #newsAPILogo {
+.flex-column {
   flex: 1 550px;
   min-width: 550px;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 #twitterLogo {
+  align-items: center;
   background-color: #1da1F2;
 }
 
 #newsAPILogo {
+  align-items: center;
   background-color: #f2d21d;
 }
 

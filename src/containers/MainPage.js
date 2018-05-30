@@ -39,19 +39,31 @@ class MainPage extends Component {
           </header>
 
           <div className="App-body">
-
-          <div id="logos">
-            <div id="twitterLogo">
-              <img style={{width: "200px"}} src={twitterLogo} />
+            <div className="flex">
+              <div className="flex-column" id="twitterLogo">
+                <img style={{width: "200px"}} src={twitterLogo} />
+              </div>
+              <div className="flex-column" id="newsAPILogo">
+                <img style={{width: "50px"}} src={newsAPILogo} />
+              </div>
             </div>
-            <div id="newsAPILogo">
-              <img style={{width: "50px"}} src={newsAPILogo} />
-            </div>
-          </div>
 
-          <Row className="show-grid">
-            <Col md={6} mdPush={6}>
-              <div className="newsAPI">
+            <div className="flex">
+              <div className="flex-column twitter">
+                {this.props.tweets.results === false &&
+                  <ZeroResults
+                    media="Twitter"
+                    searchedTerms={this.props.tweets.submittedSearch}
+                  />
+                }
+                {this.props.tweets.results.length > 0 &&
+                  <TweetList
+                    tweets={this.props.tweets}
+                    style={{color: "red"}}/>
+                }
+              </div>
+
+              <div className="flex-column newsAPI ">
                 {this.props.headlines.results === false &&
                   <ZeroResults
                     media="NewsAPI"
@@ -65,23 +77,8 @@ class MainPage extends Component {
                   />
                 }
               </div>
-            </Col>
-            <Col md={6} mdPull={6}>
-              <div className="twitter">
-              {this.props.tweets.results === false &&
-                <ZeroResults
-                  media="Twitter"
-                  searchedTerms={this.props.tweets.submittedSearch}
-                />
-              }
-              {this.props.tweets.results.length > 0 &&
-                <TweetList
-                  tweets={this.props.tweets}
-                  style={{color: "red"}}/>
-              }
-              </div>
-            </Col>
-          </Row>
+            </div>
+
           </div>
         </div>
     )
