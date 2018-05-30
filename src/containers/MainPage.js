@@ -40,11 +40,11 @@ class MainPage extends Component {
 
           <div className="App-body">
 
-          <div className="thing">
-            <div className="left">
+          <div id="logos">
+            <div id="twitterLogo">
               <img style={{width: "200px"}} src={twitterLogo} />
             </div>
-            <div className="right">
+            <div id="newsAPILogo">
               <img style={{width: "50px"}} src={newsAPILogo} />
             </div>
           </div>
