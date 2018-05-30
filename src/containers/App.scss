@@ -1,78 +1,25 @@
-/* div {
-  border:1px solid black;
-} */
-
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
-/* Set a max width to the content*/
+
+$twogle-red: #f21d61;
+$twogle-white: #fff;
+$twogle-black: #000;
+$twitter-blue: #1da1F2;
+$newsAPI-yellow: #f2d21d;
+$navy-blue: #47485f;
+$twogle-min-width: 1100px;
+
 .App-header {
-  display: flex;
-  background-color: #f21d61;
-  height: 125px;
-  padding: 20px;
-  color: black;
   justify-content: space-between;
   align-items: center;
-  min-width: 1100px;
-}
-
-.History-header {
-  display: flex;
-  background-color: #f21d61;
-  height: 55px;
+  min-width: $twogle-min-width;
+  height: 125px;
   padding: 20px;
-  color: black;
-  /* justify-content: space-between;
-  align-items: center; */
-}
-
-#history-column-container {
-  padding: 10px;
-}
-
-#history-title {
-  color: white;
-  font-size: 16px;
-}
-
-#title {
-  font-size: 30px;
-  font-family: 'Permanent Marker', cursive;
-  color: white;
-}
-
-#searchform > form > input[type="text"]:nth-child(1) {
-  width: 300px;
-}
-
-
-.btn-sm {
-  padding: 1px 1px;
-  font-size: 15px;
-  border-radius: 0px;
-}
-
-#searchform > form > input.btn-sm.btn-outline-primary:hover{
-  background-color: red;
-}
-
-#history-log {
-  align-self: flex-start;
-}
-
-h2 {
-  font-family: 'Bungee Inline', cursive;
+  color: $twogle-white;
+  background-color: $twogle-red;
 }
 
 .App-body {
   padding: 0px;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
 }
 
 .flex {
@@ -80,70 +27,92 @@ h2 {
 }
 
 .flex-column {
-  flex: 1 550px;
-  min-width: 550px;
   display: flex;
   justify-content: center;
+  flex: 1 $twogle-min-width/2;
+  min-width: $twogle-min-width/2;
 }
 
-#twitterLogo {
-  align-items: center;
-  background-color: #1da1F2;
+#twogle-logo {
+  font-size: 30px;
+  font-family: 'Permanent Marker', cursive;
+  color: $twogle-white;
 }
 
 #newsAPILogo {
   align-items: center;
-  background-color: #f2d21d;
+  background-color: $newsAPI-yellow;
 }
 
-/* width of my newscard */
-.newscard {
-  /* width: 500px; */
-  /* display: flex; */
+#twitterLogo {
+  align-items: center;
+  background-color: $twitter-blue;
 }
 
+.twitter-results {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
-/* row set up of history page */
-#History > div {
-  /* border: 1px solid blue; */
+#searchform > form > input[type="text"]:nth-child(1) {
+  width: 300px;
+  color: $twogle-black;
+}
+
+#searchform > form > input.btn-sm.btn-outline-primary {
+  color: $twogle-black;
+  &:hover {
+    color: $twogle-white;
+    background-color: $twogle-red;
+  }
+}
+
+.btn-sm {
+  padding: 1px 1px;
+  font-size: 15px;
+  border-radius: 0px;
+}
+
+.History-header {
+  background-color: $twogle-red;
+  height: 55px;
+  padding: 20px;
+}
+
+#history-column-container {
+  padding: 10px;
+}
+
+#history-title {
+  color: $twogle-white;
+  font-size: 16px;
+}
+
+#history-log {
+  align-self: flex-start;
 }
 
 /* left column of history page */
 #History > div > div.col-md-3.col-xs-5 {
-  /* border: 1px solid red; */
   font-size: 12px;
-  color: rgb(71,72,95)
+  color: rgb(71,72,95);
 }
-
-/* each history log */
-/* #history-column-container > div.col-md-9.col-xs-13 > ul > li {
-  display: flex;
-  justify-content: space-between;
-  font-size: 13px;
-  color: rgb(71,72,95)
-} */
-
-/* #history-column-container > div.col-md-9.col-xs-13 > div > span:nth-child(1) */
 
 /* each history log */
 .history-log {
-  display: flex;
   justify-content: space-between;
   font-size: 13px;
-  color: rgb(71,72,95)
+  color: $navy-blue;
 }
 
 .headline-panel {
-  /* padding: 0px 0px; */
   margin-bottom: 0px;
-  /* background-color: red; */
 }
 
 .flex-headline {
   display: flex;
   align-items: flex-start;
-  /* flex-wrap: wrap; */
-  /* flex-direction: column; */
 }
 
 .flex-headline img {
@@ -156,26 +125,14 @@ h2 {
 }
 
 #about {
-  /* border: 1px solid red; */
   padding-top: 20px;
   padding-left: 20px;
   width: 475px;
 }
 
-/* right column of history page */
-/* #History > div > div.col-md-9.col-xs-13 {
-  border: 1px solid green;
-} */
-
-/* #History > div > div > div.col-md-9.col-xs-13 {
-  border: 1px solid green;
-  padding-top: 30px;
-} */
-
 /* container where history logs are logged */
 #history-column-container > div.col-md-9.col-xs-13 {
-  /* border: 1px solid green; */
-  background-color: white;
+  background-color: $twogle-white;
   box-shadow: 5px 4px 3px 0px rgba(12,12,12,0.18);
   padding: 3px;
 }
@@ -192,50 +149,11 @@ h2 {
   box-shadow: none;
 }
 
-/* top row of bootstrap */
-#root > div > div > div > div:nth-child(1) {
-  /* border: 1px solid black; */
-  margin: 0px;
-  height: 75px;
-}
-
-/* both columns showing logo */
-#root > div > div > div > div:nth-child(1) > div {
-  /* border: 1px solid pink; */
-  color: red;
-  height: 75px;
-}
-
-/* twitter logo column-row */
-#root > div > div > div > div:nth-child(1) > div.col-md-6.col-md-pull-6 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #1DA1F2
-}
-
-/* NewsAPI logo column-row */
-#root > div > div > div > div:nth-child(1) > div.col-md-6.col-md-push-6 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f2d21d;
-}
-
-/* twitter results column */
-.twitter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-
 .list-history {
   border: 0px 1px 1px 1px solid gray;
   padding-top: 5px;
   padding-left: 10px;
   width: 600px;
-  background-color: white;
+  background-color: $twogle-white;
   box-shadow: 5px 4px 3px 0px rgba(12,12,12,0.18);
 }

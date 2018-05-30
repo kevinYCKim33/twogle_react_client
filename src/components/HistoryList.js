@@ -48,4 +48,4 @@ const HistoryList = (props) => {
   )
 }
 
-export default HistoryList
+export default HistoryList;

@@ -13,12 +13,13 @@ import { connect } from 'react-redux'; // lets you connect to the redux store
 import { bindActionCreators } from 'redux'; // lets you link dispatch actions directly to props
 import {Row, Col} from 'react-bootstrap';
 
+
 class MainPage extends Component {
   render() {
     return (
         <div className="App">
-          <header className="App-header">
-              <div id="title">TWOGLE</div>
+          <header className="App-header flex">
+              <div id="twogle-logo">TWOGLE</div>
               <SearchBoxContainer
                 fetchHeadlines={this.props.fetchHeadlines}
                 deleteTweets={this.props.deleteTweets}
@@ -27,7 +28,7 @@ class MainPage extends Component {
               />
 
             <div id="history-log">
-              <NavLink to="/about" style={{color: 'white', marginRight: '10px'}}>
+              <NavLink to="/about" style={{color: 'white',marginRight: '10px'}}>
                 About
               </NavLink>
               <NavLink to="/history" style={{color: 'white'}}>
@@ -40,7 +41,7 @@ class MainPage extends Component {
             <Logos />
 
             <div className="flex">
-              <div className="flex-column twitter">
+              <div className="flex flex-column twitter-results">
                 {this.props.tweets.results === false &&
                   <ZeroResults
                     media="Twitter"
@@ -50,7 +51,7 @@ class MainPage extends Component {
                 {this.props.tweets.results.length > 0 &&
                   <TweetList
                     tweets={this.props.tweets}
-                    style={{color: "red"}}/>
+                  />
                 }
               </div>
 

@@ -15,6 +15,4 @@ const Logos = () => {
   )
 }
 
-
-
 export default Logos;

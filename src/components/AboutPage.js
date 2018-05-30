@@ -8,8 +8,8 @@ import Logos from '../components/Logos';
 const AboutPage = () => {
   return (
     <div>
-      <header className="App-header">
-          <div id="title"><NavLink to="/" style={{color: 'white'}}>Twogle</NavLink></div>
+      <header className="App-header flex">
+          <div id="twogle-logo"><NavLink to="/" style={{color: 'white'}}>Twogle</NavLink></div>
 
         <div id="history-log">
           <NavLink to="/about" style={{color: 'white', marginRight: '10px'}}>
@@ -36,7 +36,7 @@ const AboutPage = () => {
           <br />
 
           <p>
-            <b>Front End:</b> React, React-Boostrap <br/>
+            <b>Front End:</b> React, Redux, React-Boostrap <br/>
             <b>Back End:</b> Rails, Postgres <br/>
           </p>
         </div>
