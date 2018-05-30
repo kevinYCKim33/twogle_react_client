@@ -12,7 +12,7 @@
   color: black;
   justify-content: space-between;
   align-items: center;
-  min-width: 1000px;
+  min-width: 1100px;
 }
 
 .History-header {
@@ -73,6 +73,26 @@ h2 {
 
 .App-intro {
   font-size: large;
+}
+
+.thing {
+  display: flex;
+}
+
+.left, .right {
+  flex: 1 550px;
+  min-width: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  background-color: #1da1F2;
+}
+
+.right {
+  background-color: #f2d21d;
 }
 
 /* width of my newscard */

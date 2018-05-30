@@ -40,14 +40,14 @@ class MainPage extends Component {
 
           <div className="App-body">
 
-          <Row className="show-grid">
-            <Col md={6} mdPush={6}>
-              <img style={{width: "50px"}} src={newsAPILogo} />
-            </Col>
-            <Col md={6} mdPull={6}>
+          <div className="thing">
+            <div className="left">
               <img style={{width: "200px"}} src={twitterLogo} />
-            </Col>
-          </Row>   
+            </div>
+            <div className="right">
+              <img style={{width: "50px"}} src={newsAPILogo} />
+            </div>
+          </div>
 
           <Row className="show-grid">
             <Col md={6} mdPush={6}>
