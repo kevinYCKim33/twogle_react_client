@@ -3,7 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 import {Row, Col} from 'react-bootstrap'
 import twitterLogo from '../twitter2.jpg';
 import newsAPILogo from '../NewsApiLogo.png';
-
+import Logos from '../components/Logos';
 
 const AboutPage = () => {
   return (
@@ -21,14 +21,7 @@ const AboutPage = () => {
         </div>
       </header>
       <div className="App-body">
-        <Row className="show-grid">
-          <Col md={6} mdPush={6}>
-            <img style={{width: "50px"}} src={newsAPILogo} />
-          </Col>
-          <Col md={6} mdPull={6}>
-            <img style={{width: "200px"}} src={twitterLogo} />
-          </Col>
-        </Row>
+        <Logos />
 
         <div id="about">
 

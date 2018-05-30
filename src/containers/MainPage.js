@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
 import 'isomorphic-fetch';
 import { Route, Switch } from 'react-router-dom';
-import SearchBoxContainer from './SearchBoxContainer'
-import HeadlineList from '../components/HeadlineList'
-import TweetList from '../components/TweetList'
-import ZeroResults from '../components/ZeroResults'
-import { fetchHeadlines, addDefaultSrc } from '../actions/headlineActions'
-import { fetchTweets, deleteTweets } from '../actions/twitterActions'
+import SearchBoxContainer from './SearchBoxContainer';
+import HeadlineList from '../components/HeadlineList';
+import TweetList from '../components/TweetList';
+import Logos from '../components/Logos';
+import ZeroResults from '../components/ZeroResults';
+import { fetchHeadlines, addDefaultSrc } from '../actions/headlineActions';
+import { fetchTweets, deleteTweets } from '../actions/twitterActions';
 import { NavLink, Link } from 'react-router-dom';
 import { connect } from 'react-redux'; // lets you connect to the redux store
 import { bindActionCreators } from 'redux'; // lets you link dispatch actions directly to props
-import {Row, Col} from 'react-bootstrap'
-import twitterLogo from '../twitter2.jpg';
-import newsAPILogo from '../NewsApiLogo.png';
-
+import {Row, Col} from 'react-bootstrap';
 
 class MainPage extends Component {
   render() {
@@ -39,14 +37,7 @@ class MainPage extends Component {
           </header>
 
           <div className="App-body">
-            <div className="flex">
-              <div className="flex-column" id="twitterLogo">
-                <img style={{width: "200px"}} src={twitterLogo} />
-              </div>
-              <div className="flex-column" id="newsAPILogo">
-                <img style={{width: "50px"}} src={newsAPILogo} />
-              </div>
-            </div>
+            <Logos />
 
             <div className="flex">
               <div className="flex-column twitter">
@@ -78,7 +69,6 @@ class MainPage extends Component {
                 }
               </div>
             </div>
-
           </div>
         </div>
     )
