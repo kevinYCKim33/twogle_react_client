@@ -14,7 +14,7 @@ $twogle-min-width: 1100px;
   min-width: $twogle-min-width;
   height: 125px;
   padding: 20px;
-  color: $twogle-white;
+  color: white;
   background-color: $twogle-red;
 }
 
@@ -36,7 +36,7 @@ $twogle-min-width: 1100px;
 #twogle-logo {
   font-size: 30px;
   font-family: 'Permanent Marker', cursive;
-  color: $twogle-white;
+  color: white;
 }
 
 #newsAPILogo {
@@ -57,13 +57,13 @@ $twogle-min-width: 1100px;
 
 #searchform > form > input[type="text"]:nth-child(1) {
   width: 300px;
-  color: $twogle-black;
+  color: black;
 }
 
 #searchform > form > input.btn-sm.btn-outline-primary {
-  color: $twogle-black;
+  color: black;
   &:hover {
-    color: $twogle-white;
+    color: white;
     background-color: $twogle-red;
   }
 }
@@ -81,7 +81,7 @@ $twogle-min-width: 1100px;
 }
 
 #history-title {
-  color: $twogle-white;
+  color: white;
   font-size: 16px;
 }
 
@@ -89,11 +89,8 @@ $twogle-min-width: 1100px;
   align-self: flex-start;
 }
 
-.history-log {
-  display: flex;
-  justify-content: space-between;
-  font-size: 13px;
-  color: $navy-blue;
+.search-date {
+  color: gray;
 }
 
 .headline-panel {
@@ -108,10 +105,6 @@ $twogle-min-width: 1100px;
 .flex-headline img {
   width: 100px;
   padding-right: 10px;
-}
-
-.search-date {
-  color: gray;
 }
 
 #about {
@@ -135,8 +128,15 @@ $twogle-min-width: 1100px;
   padding-top: 5px;
   padding-left: 10px;
   width: 600px;
-  background-color: $twogle-white;
+  background-color: white;
   box-shadow: 5px 4px 3px 0px rgba(12,12,12,0.18);
+}
+
+.history-log {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: $navy-blue;
 }
 
 .no-history {
