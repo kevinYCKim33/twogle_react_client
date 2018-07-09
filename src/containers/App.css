@@ -18,6 +18,7 @@
   display: flex;
   justify-content: center;
   flex: 1 550px;
+  /*column will be half min with, via flex-basis */
   min-width: 550px; }
 
 #twogle-logo {

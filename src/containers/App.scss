@@ -27,7 +27,7 @@ $twogle-min-width: 1100px;
 .flex-column {
   display: flex;
   justify-content: center;
-  flex: 1 $twogle-min-width/2;
+  flex: 1 $twogle-min-width/2; /*column will be half min with, via flex-basis */
   min-width: $twogle-min-width/2;
 }
 
